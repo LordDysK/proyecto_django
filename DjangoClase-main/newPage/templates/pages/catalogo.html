@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADN-GAMES</title>
+    {% load bootstrap5 %}
+    {% bootstrap_css%}
+    {% bootstrap_javascript%}
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/styles.css'%}">
+
+</head>
+<body>
+    
+  <!--Inicio Nav bar-->
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="home.html"><img src="{% static 'img/img/logo3.jpg'%}" alt="" width="120px" height="80px"></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="home.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="catalogo.html">Catálogo</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Tu Perfil
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="tokens.html">Tokens</a></li>
+              <li><a class="dropdown-item" href="seguridad.html">Seguridad de Usuario</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <button id="botonlog" onclick="document.getElementById('id01').style.display='block'">Iniciar Sesion</button>
+              <button id="botonlogout" onclick="document.getElementById('id02').style.display='block'">Cerrar Sesion</button>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contacto.html">Contacto</a>
+          </li>
+        </ul>
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Buscar</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+  <!-- The Modal -->
+<div id="id01" class="modal">
+<span onclick="document.getElementById('id01').style.display='none'"
+class="close" title="Close Modal">&times;</span>
+
+<!-- Modal Content -->
+<form class="modal-content animate" action="/action_page.php">
+<div class="imgcontainer">
+  <img src="imagenes/username-icon-24.jpg" alt="Avatar" class="avatar">
+</div>
+
+<div class="container">
+  <label for="uname"><b>Username</b></label>
+  <input type="text" placeholder="Enter Username" name="uname" required>
+
+  <label for="psw"><b>Password</b></label>
+  <input type="password" placeholder="Enter Password" name="psw" required>
+
+  <button class="btnloginchico" type="submit">Login</button>
+  <label class="remember">
+    <input type="checkbox" checked="checked" name="remember"> Recordarme
+  </label>
+</div>
+
+<div class="container" style="background-color:#f1f1f1">
+  <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn1">Cancel</button>
+  <span class="olvido">Forgot <a href="#" class="olvido">password?</a></span>
+</div>
+</form>
+</div>
+<div id="id02" class="modal modal2">
+<span onclick="document.getElementById('id02').style.display='none'"
+class="close" title="Close Modal">&times;</span>
+<form class="modal-content animate" action="/action_page.php">
+<div class="imgcontainer">
+<h1>Desea Cerrar Sesion?  </h1>
+</div>
+
+<div class="container">
+
+
+</div>
+
+<div class="container" style="background-color:#f1f1f1">
+<button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn cancel1">Aceptar</button>
+<button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn1 sumbit1">Cancelar</button>
+</div>
+</form>
+
+</div>
+
+      </nav><!-- barra -->
+      <div class="container">
+      <div class="row row-cols-1 row-cols-md-3 g-4">
+        <div class="col">
+          <div class="card ">
+            <a href="Re4.html"><img src="{% static 'img/img/Re4.jpg'%}" class="img-thumbnail w-75 m-auto " alt="..." ></a>
+            <div class="card-body">
+              <h5 class="card-title">Resident Evil 4</h5>
+              <p class="card-text">$37.000CLP</p>
+              <a class="btn btn-primary" href="Re4.html" role="button">Comprar</a>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card ">
+            <a href="HK.html"><img src="{% static 'img/img/hollow.jpg'%}" class="img-thumbnail w-75 m-auto " alt="..."></a>
+            <div class="card-body">
+              <h5 class="card-title">Hollow Knight</h5>
+              <p class="card-text">$8.000CLP</p>
+              <a class="btn btn-primary" href="HK.html" role="button">Comprar</a>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card">
+            <a href="KTN.html"><img src="{% static 'img/img/katanazero.jpg'%}" class="img-thumbnail w-75 m-auto" alt="..."></a>
+            <div class="card-body">
+              <h5 class="card-title">Katana Zero</h5>
+              <p class="card-text">$5.500CLP</p>
+              <a class="btn btn-primary" href="KTN.html" role="button">Comprar</a>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card ">
+            <img src="{%static 'imagenes/gow.jpg'%}" class="img-thumbnail w-75 m-auto " alt="...">
+            <div class="card-body">
+              <h5 class="card-title">God of War(2018)</h5>
+              <p class="card-text">$30.000CLP</p>
+              <a class="btn btn-primary" href="GOW.html" role="button">Comprar</a>
+
+            </div>
+          </div>
+        </div>
+        <div class="col">
+            <div class="card ">
+              <img src="{%static 'imagenes/forza.jpg'%}" class="img-thumbnail w-75 m-auto " alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Forza Horizon 5</h5>
+                <p class="card-text">$40.000CLP</p>
+                <a class="btn btn-primary" href="FH5.html" role="button">Comprar</a>
+
+              </div>
+            </div>
+          </div>
+          <!-- <div class="col">
+            <div class="card ">
+              <img src="imagenes/Elden ring.jpg" class="img-thumbnail w-75 m-auto " alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Elden ring</h5>
+                <p class="card-text">$40.000CLP</p>
+                <a class="btn btn-primary" href="" role="button">Comprar</a>
+
+              </div>
+            </div>
+          </div -->
+      </div> </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js" integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N" crossorigin="anonymous"></script>
+    <script>
+      // Get the modal
+      var modal = document.getElementById('id01');
+      
+      
+      // When the user clicks anywhere outside of the modal, close it
+      window.onclick = function(event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+      }
+      
+      </script>
+</body>
+</html>

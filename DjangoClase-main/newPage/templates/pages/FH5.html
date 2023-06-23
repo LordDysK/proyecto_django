@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ADN-Games</title>
+    {% load bootstrap5 %} {% bootstrap_css%} {% bootstrap_javascript%} {% load static %}
+    <link rel="stylesheet" href="{% static 'css/styles.css'%}" />
+  </head>
+  <body>
+    <!--Inicio Nav bar-->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="home.html"><img src="imagenes/logo3.jpg" alt="" width="120px" height="80px" /></a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="home.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="catalogo.html">Catálogo</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false">
+                Tu Perfil
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="tokens.html">Tokens</a></li>
+                <li>
+                  <a class="dropdown-item" href="seguridad.html">Seguridad de Usuario</a>
+                </li>
+                <li><hr class="dropdown-divider" /></li>
+                <button id="botonlog" onclick="document.getElementById('id01').style.display='block'">
+                  Iniciar Sesion
+                </button>
+                <button id="botonlogout" onclick="document.getElementById('id02').style.display='block'">
+                  Cerrar Sesion
+                </button>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contacto.html">Contacto</a>
+            </li>
+          </ul>
+          <form class="d-flex" role="search">
+            <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search" />
+            <button class="btn btn-outline-success" type="submit">Buscar</button>
+          </form>
+        </div>
+      </div>
+    </nav>
+    <!-- The Modal -->
+    <div id="id01" class="modal">
+      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal"
+        >&times;</span
+      >
+
+      <!-- Modal Content -->
+      <form class="modal-content animate" action="/action_page.php">
+        <div class="imgcontainer">
+          <img src="imagenes/username-icon-24.jpg" alt="Avatar" class="avatar" />
+        </div>
+
+        <div class="container">
+          <label for="uname"><b>Username</b></label>
+          <input type="text" placeholder="Enter Username" name="uname" required />
+
+          <label for="psw"><b>Password</b></label>
+          <input type="password" placeholder="Enter Password" name="psw" required />
+
+          <button class="btnloginchico" type="submit">Login</button>
+          <label class="remember">
+            <input type="checkbox" checked="checked" name="remember" />
+            Recordarme
+          </label>
+          <br />
+          <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn1">
+            Cancel
+          </button>
+          <span class="olvido">Olvido <a href="#" class="olvido">la contraseña?</a></span>
+        </div>
+      </form>
+    </div>
+    <div id="id02" class="modal modal2">
+      <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal"
+        >&times;</span
+      >
+      <form class="modal-content animate" action="/action_page.php">
+        <div class="imgcontainer">
+          <h1>Desea Cerrar Sesion?</h1>
+        </div>
+
+        <div class="container"></div>
+
+        <div class="container" style="background-color: #f1f1f1">
+          <button
+            type="button"
+            onclick="document.getElementById('id02').style.display='none'"
+            class="cancelbtn cancel1">
+            Aceptar
+          </button>
+          <button
+            type="button"
+            onclick="document.getElementById('id02').style.display='none'"
+            class="cancelbtn1 sumbit1">
+            Cancelar
+          </button>
+        </div>
+      </form>
+    </div>
+    <script>
+      // Get the modal
+      var modal = document.getElementById("id01");
+
+      // When the user clicks anywhere outside of the modal, close it
+      window.onclick = function (event) {
+        if (event.target == modal) {
+          modal.style.display = "none";
+        }
+      };
+    </script>
+    <!--Fin Nav bar-->
+    <br />
+    <div class="container3">
+      <div class="row">
+        <div class="col-3">
+          <img src="imagenes/img_home/FORZA.jpg" width="200" height="250" class="img-thumbnail w-50 m-auto" />
+        </div>
+        <div class="col-md-2">
+          <h2>Forza Horizon 5</h2>
+          <p>$35USD</p>
+          <p2 style="text-align: center"
+            >Forza Horizon Conquista la escarpada Sierra Nueva en la experiencia definitiva del rally de Horizon..</p2
+          >
+          <br />
+          <button class="bg-success border-2">Comprar</button>
+        </div>
+        <br />
+        <div class="col-6">
+          <center>
+            <div id="CarruselRe4" class="carousel carousel-dark slide-1">
+              <div class="carousel-indicators">
+                <button
+                  type="button"
+                  data-bs-target="#CarruselRe4"
+                  data-bs-slide-to="0"
+                  class="active"
+                  aria-current="true"
+                  aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#CarruselRe4" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#CarruselRe4" data-bs-slide-to="2" aria-label="Slide 3"></button>
+              </div>
+              <div class="carousel-inner">
+                <div class="carousel-item active" data-bs-interval="10000">
+                  <img src="imagenes/forzacarrusel1.jpg" class="d-block w-100 imagenesre4" alt="..." />
+                  <div class="carousel-caption d-none d-md-block"></div>
+                </div>
+                <div class="carousel-item" data-bs-interval="2000">
+                  <img src="imagenes/forzacarrusel2.jpg" class="d-block w-100 imagenesre4" alt="..." />
+                  <div class="carousel-caption d-none d-md-block"></div>
+                </div>
+                <div class="carousel-item">
+                  <img src="imagenes/forzacarrusel3.jpg" class="d-block w-100 imagenesre4" alt="..." />
+                  <div class="carousel-caption d-none d-md-block"></div>
+                </div>
+              </div>
+              <br />
+            </div>
+          </center>
+        </div>
+      </div>
+    </div>
+
+    <div class="DescripcionRe4">
+      <h2>Forza Horizon 5</h2>
+      <p>
+        Explora los vibrantes paisajes del mundo abierto de México y disfruta de una diversión sin límites al volante de
+        los mejores coches del mundo.
+      </p>
+      <button
+        class="btn btn-primary mt-3"
+        data-bs-toggle="collapse"
+        data-bs-target="#more-info"
+        aria-expanded="false"
+        aria-controls="more-info">
+        Ver más
+      </button>
+      <div class="collapse" id="more-info">
+        <h3>Características del juego Forza Horizon 5</h3>
+        <ul>
+          <li>
+            Este es un mundo abierto diverso Explora un mundo de llamativo contraste y belleza. Descubre desiertos
+            vivos, exuberantes selvas, ciudades históricas, ruinas escondidas, playas inmaculadas, vastos cañones y un
+            imponente volcán nevado.
+          </li>
+          <li>
+            Lidera impresionantes expediciones a través de los paisajes dinámicos y en constante evolución del mundo
+            abierto de México con una acción de conducción ilimitada y divertida en cientos de los mejores coches del
+            mundo.
+          </li>
+          <li>
+            Forma equipos con otros jugadores y participa en Horizon Arcade para disfrutar de una serie continuada de
+            desafíos divertidos y exagerados que os mantendrán en la acción y os entretendrán sin menús, pantallas de
+            carga ni salas de espera. Conoce nuevos amigos en Horizon Open y Tours, y comparte tus creaciones con nuevos
+            intercambios de regalos entre miembros de la comunidad.
+          </li>
+        </ul>
+        <p>
+          ¡Tu aventura definitiva en Horizon te espera! Explora paisajes dinámicos y en constante evolución del mundo
+          abierto de México con una acción de conducción ilimitada y divertida en cientos de los mejores coches del
+          mundo.
+        </p>
+      </div>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N"
+      crossorigin="anonymous"></script>
+  </body>
+</html>

@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADN-Games</title>
+    {% load bootstrap5 %}
+    {% bootstrap_css%}
+    {% bootstrap_javascript%}
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/styles.css'%}">
+
+
+</head>
+
+<body>
+  <!--Inicio Nav bar-->
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="home.html"><img src="imagenes/logo3.jpg" alt="" width="120px" height="80px"></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="home.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="catalogo.html">Catálogo</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Tu Perfil
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="tokens.html">Tokens</a></li>
+              <li><a class="dropdown-item" href="seguridad.html">Seguridad de Usuario</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <button id="botonlog" onclick="document.getElementById('id01').style.display='block'">Iniciar Sesion</button>
+              <button id="botonlogout" onclick="document.getElementById('id02').style.display='block'">Cerrar Sesion</button>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contacto.html">Contacto</a>
+          </li>
+        </ul>
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Buscar</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+  <!-- The Modal -->
+<div id="id01" class="modal">
+<span onclick="document.getElementById('id01').style.display='none'"
+class="close" title="Close Modal">&times;</span>
+
+<!-- Modal Content -->
+<form class="modal-content animate" action="/action_page.php">
+<div class="imgcontainer">
+  <img src="imagenes/username-icon-24.jpg" alt="Avatar" class="avatar">
+</div>
+
+<div class="container">
+  <label for="uname"><b>Username</b></label>
+  <input type="text" placeholder="Enter Username" name="uname" required>
+
+  <label for="psw"><b>Password</b></label>
+  <input type="password" placeholder="Enter Password" name="psw" required>
+
+  <button class="btnloginchico" type="submit">Login</button>
+  <label class="remember">
+    <input type="checkbox" checked="checked" name="remember"> Recordarme
+  </label>
+</div>
+
+<div class="container" style="background-color:#f1f1f1">
+  <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn1">Cancel</button>
+  <span class="olvido">Forgot <a href="#" class="olvido">password?</a></span>
+</div>
+</form>
+</div>
+<div id="id02" class="modal modal2">
+<span onclick="document.getElementById('id02').style.display='none'"
+class="close" title="Close Modal">&times;</span>
+<form class="modal-content animate" action="/action_page.php">
+<div class="imgcontainer">
+<h1>Desea Cerrar Sesion?  </h1>
+</div>
+
+<div class="container">
+
+
+</div>
+
+<div class="container" style="background-color:#f1f1f1">
+<button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn cancel1">Aceptar</button>
+<button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn1 sumbit1">Cancelar</button>
+</div>
+</form>
+
+</div>
+<script>
+// Get the modal
+var modal = document.getElementById('id01');
+
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+if (event.target == modal) {
+  modal.style.display = "none";
+}
+}
+
+</script><!--Fin Nav bar-->
+
+      <div class ="contenedor1">
+        <h2>Ajuste de usuarios
+        </h2><form></form>
+        <div class="row">
+            <div class="col">
+              <input type="text" class="form-control" placeholder="Nombre" aria-label="First name" id="nombre" name="nombre">
+            </div>
+            <div class="col">
+              <input type="text" class="form-control" placeholder="Apellido" aria-label="Last name" id="apellido" name="apellido">
+            </div>
+          </div><br>
+          <div class="col-12">
+            <label class="visually-hidden" for="inlineFormSelectPref">Preference</label>
+            <select id="paises-select"></select>
+          <!--   <select class="form-select" id="opciones-select" >
+              <option selected>Pais</option>
+              <option value="1">chile</option>
+              <option value="2">chile premiun</option>
+              <option value="3">chile comunista</option>
+            </select> -->
+          </div>
+          <h2>---------------------------------------------</h2>
+          <br><h1>Notificaciones</h1>
+          
+         <div class="form-check form-switch form-check-reverse">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckReverse">
+          <label class="form-check-label" for="flexSwitchCheckReverse">Notificaciones diarias </label>
+          </div>
+                    
+          <div class="form-check form-switch form-check-reverse">
+            <input class="form-check-input" type="checkbox" id="flexSwitchCheckReverse">
+            <label class="form-check-label" for="flexSwitchCheckReverse">Notificacion de afertas</label>
+          </div>            
+          <div class="form-check form-switch form-check-reverse">
+            <input class="form-check-input" type="checkbox" id="flexSwitchCheckReverse">
+            <label class="form-check-label" for="flexSwitchCheckReverse">Uso automatico de la tarjeta</label>
+          </div><br><h2>---------------------------------------------</h2> <br>
+          <button type="submit" class="btn btn-primary">Guardar</button>
+          <button type="submit" class="btn btn-secondary">Cancelar</button><br><br>
+        </form>
+          <h1>Cerrar cuenta</h1>
+          <button type="button" class="btn btn-danger">Borrar cuenta</button>
+
+          
+      <!--final del contenedor 1  -->
+      </div>
+      <div class="contenedor2">
+        <h2>Sistema de arriendo </h2>
+         <!-- <h6 class="textoparrafo">Nuestro sistema de arriendo de videojuegos se basa es un sistema de tokens. Los tokens son comprados directamente en la pagina o obtenidos por promociones o ofertas por tiempo de coneccion en la pagina, ademas, por cada 10000clp gastados en juegos o servicios de la pagina se sumaran 10 tokens a tu contador.
+            Puedes jugar cualquier juego de nuestro catalogo en un free trial con nuestro sistema de token, teniendo un costo de  5 token la hora d ejuego en cualquier juego de nuestro catalogo.
+            La devolucion o reembolso de un juego comprado restara el mismo saldo de token agregado por este al momento de su adquisicion </h6> -->
+         
+         <h2>---------------------------------------------</h2>
+          <label for="customRange1" class="form-label">Restricciones de Seguridad</label>
+            <input type="range" class="form-range" id="customRange1">
+          <h1>Confirmar compra</h1>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+            <label class="form-check-label" for="exampleRadios1">
+              Confirmar compra de arriendo con sms
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+            <label class="form-check-label" for="exampleRadios1">
+              Confirmar compra con correo
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+            <label class="form-check-label" for="exampleRadios1">
+             confirmar compra Whatsapp
+            </label>
+          </div>
+
+<!-- fibnal de contenedor 2 -->
+      </div>
+      <div class="contenedor3">
+        <h1>Cartera</h1><br>
+        <h3>Cactualizacion de la forma de pago </h3>
+        <h2>---------------------------------------------</h2>
+        <h1>Tarjeta de Credito</h1>
+        <div class="col">
+          <input type="text" class="form-control" placeholder="Numerod de tajeta" aria-label="First name">
+        </div>
+        <div class="col-md-6">
+          <label for="inputCity" class="form-label">Fecha de experacion</label>
+          <input type="text" class="form-control" id="inputCity">
+        </div>
+        
+        <div class="col-md-2">
+          <label for="inputZip" class="form-label">CVC</label>
+          <input type="text" class="form-control" id="inputZip">
+        </div>
+        <button type="button" class="btn btn-primary">Actualizar tarjeta</button>
+      <br><h2>---------------------------------------------</h2>
+      <h1>Productos arrendados:</h1>
+      <button type="button" class="btn btn-outline-primary" disabled>CS-GO</button>
+      <button type="button" class="btn btn-danger">Danger</button><br>
+      <button type="button" class="btn btn-outline-primary" disabled>Resident evil</button>
+        <button type="button" class="btn btn-danger">Danger</button><br>
+        <button type="button" class="btn btn-outline-primary" disabled>Tu mama es wena pal loly</button>
+        <button type="button" class="btn btn-danger">Danger</button><br>
+        
+
+
+        <!-- final del contenedor 3 -->
+      </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js" integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N" crossorigin="anonymous"></script>
+    <script>
+      const select = document.getElementById("paises-select");
+
+fetch('https://restcountries.com/v3.1/all')
+  .then(response => response.json())
+  .then(data => {
+    data.forEach(pais => {
+      const optionElement = document.createElement("option");
+      optionElement.value = pais.name.common;
+      optionElement.textContent = pais.name.common;
+      select.appendChild(optionElement);
+    });
+  })
+  .catch(error => {
+    console.error('Error al obtener países desde la API:', error);
+  });
+    </script>
+</body>
+</html>

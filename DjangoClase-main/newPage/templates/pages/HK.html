@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ADN-Games</title>
+    {% load bootstrap5 %} {% bootstrap_css%} {% bootstrap_javascript%} {% load static %}
+    <link rel="stylesheet" href="{% static 'css/styles.css'%}" />
+  </head>
+  <body>
+    <!--Inicio Nav bar-->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="home.html"><img src="imagenes/logo3.jpg" alt="" width="120px" height="80px" /></a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="home.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="catalogo.html">Catálogo</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false">
+                Tu Perfil
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="tokens.html">Tokens</a></li>
+                <li>
+                  <a class="dropdown-item" href="seguridad.html">Seguridad de Usuario</a>
+                </li>
+                <li><hr class="dropdown-divider" /></li>
+                <button id="botonlog" onclick="document.getElementById('id01').style.display='block'">
+                  Iniciar Sesion
+                </button>
+                <button id="botonlogout" onclick="document.getElementById('id02').style.display='block'">
+                  Cerrar Sesion
+                </button>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contacto.html">Contacto</a>
+            </li>
+          </ul>
+          <form class="d-flex" role="search">
+            <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search" />
+            <button class="btn btn-outline-success" type="submit">Buscar</button>
+          </form>
+        </div>
+      </div>
+    </nav>
+    <!-- The Modal -->
+    <div id="id01" class="modal">
+      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal"
+        >&times;</span
+      >
+
+      <!-- Modal Content -->
+      <form class="modal-content animate" action="/action_page.php">
+        <div class="imgcontainer">
+          <img src="imagenes/username-icon-24.jpg" alt="Avatar" class="avatar" />
+        </div>
+
+        <div class="container">
+          <label for="uname"><b>Username</b></label>
+          <input type="text" placeholder="Enter Username" name="uname" required />
+
+          <label for="psw"><b>Password</b></label>
+          <input type="password" placeholder="Enter Password" name="psw" required />
+
+          <button class="btnloginchico" type="submit">Login</button>
+          <label class="remember">
+            <input type="checkbox" checked="checked" name="remember" />
+            Recordarme
+          </label>
+        </div>
+
+        <div class="container" style="background-color: #f1f1f1">
+          <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn1">
+            Cancel
+          </button>
+          <span class="olvido">Forgot <a href="#" class="olvido">password?</a></span>
+        </div>
+      </form>
+    </div>
+    <div id="id02" class="modal modal2">
+      <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal"
+        >&times;</span
+      >
+      <form class="modal-content animate" action="/action_page.php">
+        <div class="imgcontainer">
+          <h1>Desea Cerrar Sesion?</h1>
+        </div>
+
+        <div class="container"></div>
+
+        <div class="container" style="background-color: #f1f1f1">
+          <button
+            type="button"
+            onclick="document.getElementById('id02').style.display='none'"
+            class="cancelbtn cancel1">
+            Aceptar
+          </button>
+          <button
+            type="button"
+            onclick="document.getElementById('id02').style.display='none'"
+            class="cancelbtn1 sumbit1">
+            Cancelar
+          </button>
+        </div>
+      </form>
+    </div>
+    <script>
+      // Get the modal
+      var modal = document.getElementById("id01");
+
+      // When the user clicks anywhere outside of the modal, close it
+      window.onclick = function (event) {
+        if (event.target == modal) {
+          modal.style.display = "none";
+        }
+      };
+    </script>
+    <!--Fin Nav bar-->
+    <br />
+    <div class="container3">
+      <div class="row">
+        <div class="col-3">
+          <img src="imagenes/hollow.jpg" width="200" height="250" class="img-fluid" />
+        </div>
+        <div class="col-md-2">
+          <h2>Hollow Knight</h2>
+          <p>8.000clp</p>
+          <p2 style="text-align: center">Enfréntate a las profundidades de un reino olvidado.</p2>
+          <br />
+          <button class="bg-success border-2">Comprar</button>
+        </div>
+        <br />
+        <div class="col-6">
+          <center>
+            <div id="CarruselRe4" class="carousel carousel-dark slide-1">
+              <div class="carousel-indicators">
+                <button
+                  type="button"
+                  data-bs-target="#CarruselRe4"
+                  data-bs-slide-to="0"
+                  class="active"
+                  aria-current="true"
+                  aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#CarruselRe4" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#CarruselRe4" data-bs-slide-to="2" aria-label="Slide 3"></button>
+              </div>
+              <div class="carousel-inner">
+                <div class="carousel-item active" data-bs-interval="10000">
+                  <img src="imagenes/hollow kcarrusel2.jpg" class="d-block w-100 imagenesre4" alt="..." />
+                  <div class="carousel-caption d-none d-md-block"></div>
+                </div>
+                <div class="carousel-item" data-bs-interval="2000">
+                  <img src="imagenes/hollowknightcarrusel.jpg" class="d-block w-100 imagenesre4" alt="..." />
+                  <div class="carousel-caption d-none d-md-block"></div>
+                </div>
+                <div class="carousel-item">
+                  <img src="imagenes/hollowknightcarrusel3.jpg" class="d-block w-100 imagenesre4" alt="..." />
+                  <div class="carousel-caption d-none d-md-block"></div>
+                </div>
+              </div>
+              <br />
+              <br />
+            </div>
+          </center>
+        </div>
+      </div>
+    </div>
+
+    <!-- cambiar la descricion del juego xdxdxdx -->
+    <div class="DescripcionRe4">
+      <h2>Hollow Knight</h2>
+      <p>
+        Hollow Knight es una aventura de acción clásica en 2D ambientada en un vasto mundo interconectado. Explora
+        cavernas tortuosas, ciudades antiguas y páramos mortales. Combate contra criaturas corrompidas, haz nuevas
+        amistades con extraños insectos y resuelve los antiguos misterios que yacen en el corazón del reino..
+      </p>
+      <button
+        class="btn btn-primary mt-3"
+        data-bs-toggle="collapse"
+        data-bs-target="#more-info"
+        aria-expanded="false"
+        aria-controls="more-info">
+        Ver más
+      </button>
+      <div class="collapse" id="more-info">
+        <<<<<<< HEAD
+        <h3>Características del juego Resident Evil 4</h3>
+        <ul>
+          <li>
+            Hollow Knight se enfoca principalmente en exploración, plataformas y combate. Los jugadores exploran un gran
+            mundo interconectado usando una variedad de movimientos y técnicas de combate.
+          </li>
+          <li>
+            En los distintos escenarios se pueden encontrar detalles que relatan la historia de Hallownest, tales como
+            piedras con escritos, objetos particulares, etc. Al estilo clásico de los metroidvania, existen áreas del
+            mundo a las que los jugadores no pueden acceder hasta que hayan obtenido algún objeto o habilidad particular
+          </li>
+          <li>
+            El guardado del juego sólo puede hacerse en los bancos para descansar que se encuentran esparcidos por todo
+            el reino. Al sentarse en un banco, el mapa se actualizará con las zonas recientemente descubiertas por el
+            Caballero, a su vez que regenera su salud en caso de que la haya perdido.
+          </li>
+        </ul>
+        <p>
+          Es sorprendente el trabajo que se dieron las tres personas encargadas de hacer tamaño título, pero ¿De qué
+          exactamente hablamos? Hollow Knight es un juego estilo “Metroidvania” con un estilo de arte muy parecido al
+          trabajo de Tim Burton, el cual consta de recorrer pasillos inundados de enemigos, obstáculos, jefes, saltos
+          imposibles, power ups, etc.; en un mundo oscuro, tenebroso, con más de 140 tipos de enemigos que lo único que
+          quieren es aniquilarte. Hollow Knight se convierte en un verdadero desafío, mientras más avanzas por el juego,
+          pero ¿Es tan mala la oscuridad?
+        </p>
+        =======
+        <h3>Mas Acerca de Hollow Knight</h3>
+        <p>
+          Un mundo sugerente hecho a mano El mundo de Hollow Knight cobra vida gracias a sus detalles vívidos y
+          melancólicos, sus cavernas con criaturas extrañas y terroríficas, y su animación a mano con un estilo
+          tradicional en 2D. Cada nueva zona que descubras es única, hermosa y extraña, con cantidad de criaturas y
+          personajes nuevos. Disfruta de las vistas y descubre nuevas maravillas ocultas fuera de los caminos
+          habituales. Si te gusta la jugabilidad clásica, los personajes adorables a la vez que extraños, las aventuras
+          épicas y los mundos bellos y de estilo gótico, ¡entonces Hollow Knight te espera!
+        </p>
+        >>>>>>> 84ab9d557317cf1e89b5c68a5211839c457067bd
+      </div>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N"
+      crossorigin="anonymous"></script>
+  </body>
+</html>
