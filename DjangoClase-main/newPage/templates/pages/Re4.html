@@ -5,17 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ADN-Games</title>
-    {% load bootstrap5 %} {% bootstrap_css%} {% bootstrap_javascript%} {% load
-    static %}
+    {% load bootstrap5 %} {% bootstrap_css%} {% bootstrap_javascript%} {% load static %}
     <link rel="stylesheet" href="{% static 'css/styles.css'%}" />
   </head>
   <body>
     <!--Inicio Nav bar-->
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
       <div class="container-fluid">
-        <a class="navbar-brand" href="home.html"
-          ><img src="imagenes/logo3.jpg" alt="" width="120px" height="80px"
-        /></a>
+        <a class="navbar-brand" href="home.html"><img src="imagenes/logo3.jpg" alt="" width="120px" height="80px" /></a>
         <button
           class="navbar-toggler"
           type="button"
@@ -23,16 +20,13 @@
           data-bs-target="#navbarSupportedContent"
           aria-controls="navbarSupportedContent"
           aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
+          aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="home.html"
-                >Home</a
-              >
+              <a class="nav-link active" aria-current="page" href="home.html">Home</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="catalogo.html">Catálogo</a>
@@ -43,28 +37,19 @@
                 href="#"
                 role="button"
                 data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
+                aria-expanded="false">
                 Tu Perfil
               </a>
               <ul class="dropdown-menu">
                 <li><a class="dropdown-item" href="tokens.html">Tokens</a></li>
                 <li>
-                  <a class="dropdown-item" href="seguridad.html"
-                    >Seguridad de Usuario</a
-                  >
+                  <a class="dropdown-item" href="seguridad.html">Seguridad de Usuario</a>
                 </li>
                 <li><hr class="dropdown-divider" /></li>
-                <button
-                  id="botonlog"
-                  onclick="document.getElementById('id01').style.display='block'"
-                >
+                <button id="botonlog" onclick="document.getElementById('id01').style.display='block'">
                   Iniciar Sesion
                 </button>
-                <button
-                  id="botonlogout"
-                  onclick="document.getElementById('id02').style.display='block'"
-                >
+                <button id="botonlogout" onclick="document.getElementById('id02').style.display='block'">
                   Cerrar Sesion
                 </button>
               </ul>
@@ -74,54 +59,30 @@
             </li>
           </ul>
           <form class="d-flex" role="search">
-            <input
-              class="form-control me-2"
-              type="search"
-              placeholder="Buscar"
-              aria-label="Search"
-            />
-            <button class="btn btn-outline-success" type="submit">
-              Buscar
-            </button>
+            <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search" />
+            <button class="btn btn-outline-success" type="submit">Buscar</button>
           </form>
         </div>
       </div>
     </nav>
     <!-- The Modal -->
     <div id="id01" class="modal">
-      <span
-        onclick="document.getElementById('id01').style.display='none'"
-        class="close"
-        title="Close Modal"
+      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal"
         >&times;</span
       >
 
       <!-- Modal Content -->
       <form class="modal-content animate" action="/action_page.php">
         <div class="imgcontainer">
-          <img
-            src="imagenes/username-icon-24.jpg"
-            alt="Avatar"
-            class="avatar"
-          />
+          <img src="imagenes/username-icon-24.jpg" alt="Avatar" class="avatar" />
         </div>
 
         <div class="container">
           <label for="uname"><b>Username</b></label>
-          <input
-            type="text"
-            placeholder="Enter Username"
-            name="uname"
-            required
-          />
+          <input type="text" placeholder="Enter Username" name="uname" required />
 
           <label for="psw"><b>Password</b></label>
-          <input
-            type="password"
-            placeholder="Enter Password"
-            name="psw"
-            required
-          />
+          <input type="password" placeholder="Enter Password" name="psw" required />
 
           <button class="btnloginchico" type="submit">Login</button>
           <label class="remember">
@@ -131,24 +92,15 @@
         </div>
 
         <div class="container" style="background-color: #f1f1f1">
-          <button
-            type="button"
-            onclick="document.getElementById('id01').style.display='none'"
-            class="cancelbtn1"
-          >
+          <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn1">
             Cancel
           </button>
-          <span class="olvido"
-            >Forgot <a href="#" class="olvido">password?</a></span
-          >
+          <span class="olvido">Forgot <a href="#" class="olvido">password?</a></span>
         </div>
       </form>
     </div>
     <div id="id02" class="modal modal2">
-      <span
-        onclick="document.getElementById('id02').style.display='none'"
-        class="close"
-        title="Close Modal"
+      <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal"
         >&times;</span
       >
       <form class="modal-content animate" action="/action_page.php">
@@ -162,15 +114,13 @@
           <button
             type="button"
             onclick="document.getElementById('id02').style.display='none'"
-            class="cancelbtn cancel1"
-          >
+            class="cancelbtn cancel1">
             Aceptar
           </button>
           <button
             type="button"
             onclick="document.getElementById('id02').style.display='none'"
-            class="cancelbtn1 sumbit1"
-          >
+            class="cancelbtn1 sumbit1">
             Cancelar
           </button>
         </div>
@@ -192,19 +142,12 @@
     <div class="container3">
       <div class="row">
         <div class="col-3">
-          <img
-            src="imagenes/Re4.jpg"
-            width="200"
-            height="250"
-            class="img-thumbnail w-50 m-auto"
-          />
+          <img src="{%static 'img/img/Re4.jpg'%}" width="200" height="250" class="img-thumbnail w-50 m-auto" />
         </div>
         <div class="col-md-2">
           <h2>Resident Evil 4</h2>
           <p>37.000clp</p>
-          <p2 style="text-align: center">
-            Resident Evil 4 conserva la esencia del juego original.</p2
-          >
+          <p2 style="text-align: center"> Resident Evil 4 conserva la esencia del juego original.</p2>
           <br />
           <button class="bg-success border-2">Comprar</button>
         </div>
@@ -219,44 +162,21 @@
                   data-bs-slide-to="0"
                   class="active"
                   aria-current="true"
-                  aria-label="Slide 1"
-                ></button>
-                <button
-                  type="button"
-                  data-bs-target="#CarruselRe4"
-                  data-bs-slide-to="1"
-                  aria-label="Slide 2"
-                ></button>
-                <button
-                  type="button"
-                  data-bs-target="#CarruselRe4"
-                  data-bs-slide-to="2"
-                  aria-label="Slide 3"
-                ></button>
+                  aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#CarruselRe4" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#CarruselRe4" data-bs-slide-to="2" aria-label="Slide 3"></button>
               </div>
               <div class="carousel-inner">
                 <div class="carousel-item active" data-bs-interval="10000">
-                  <img
-                    src="imagenes/img1.jpg"
-                    class="d-block w-100 imagenesre4"
-                    alt="..."
-                  />
+                  <img src="{% static 'img/img/img1.jpg'%}" class="d-block w-100 imagenesre4" alt="..." />
                   <div class="carousel-caption d-none d-md-block"></div>
                 </div>
                 <div class="carousel-item" data-bs-interval="2000">
-                  <img
-                    src="imagenes/img 2.jpg"
-                    class="d-block w-100 imagenesre4"
-                    alt="..."
-                  />
+                  <img src="{% static 'img/img/img 2.jpg'%}" class="d-block w-100 imagenesre4" alt="..." />
                   <div class="carousel-caption d-none d-md-block"></div>
                 </div>
                 <div class="carousel-item">
-                  <img
-                    src="imagenes/img3.jpg"
-                    class="d-block w-100 imagenesre4"
-                    alt="..."
-                  />
+                  <img src="{%static 'img/img/img3.jpg'%}" class="d-block w-100 imagenesre4" alt="..." />
                   <div class="carousel-caption d-none d-md-block"></div>
                 </div>
               </div>
@@ -270,57 +190,45 @@
     <div class="DescripcionRe4">
       <h2>Resident Evil 4</h2>
       <p>
-        Disfruta del remake del juego de survival horror que cambió por completo
-        el género. Resident Evil 4, adaptado a las consolas y PC modernos con
-        gráficos y mecánicas de juego renovados, te lleva de vuelta a un remoto
-        pueblo europeo infectado por el parásito que controla la mente: Las
-        Plagas. Tras los remakes de RE2 y RE3, Capcom nos ofrece otro remake de
-        un juego clásico. Si nunca has jugado al RE4 original, el Resident Evil
-        4 Código de Steam es una forma perfecta de experimentar uno de los
-        mejores juegos, si no el mejor, de la serie Resident Evil.
+        Disfruta del remake del juego de survival horror que cambió por completo el género. Resident Evil 4, adaptado a
+        las consolas y PC modernos con gráficos y mecánicas de juego renovados, te lleva de vuelta a un remoto pueblo
+        europeo infectado por el parásito que controla la mente: Las Plagas. Tras los remakes de RE2 y RE3, Capcom nos
+        ofrece otro remake de un juego clásico. Si nunca has jugado al RE4 original, el Resident Evil 4 Código de Steam
+        es una forma perfecta de experimentar uno de los mejores juegos, si no el mejor, de la serie Resident Evil.
       </p>
       <button
         class="btn btn-primary mt-3"
         data-bs-toggle="collapse"
         data-bs-target="#more-info"
         aria-expanded="false"
-        aria-controls="more-info"
-      >
+        aria-controls="more-info">
         Ver más
       </button>
       <div class="collapse" id="more-info">
         <h3>Características del juego Resident Evil 4</h3>
         <ul>
           <li>
-            Nueva capa de pintura. El remake de Resident Evil 4 tiene un aspecto
-            fenomenal con gráficos, iluminación y sombras renovados;
+            Nueva capa de pintura. El remake de Resident Evil 4 tiene un aspecto fenomenal con gráficos, iluminación y
+            sombras renovados;
           </li>
           <li>
-            Nuevo pero familiar. Leon todavía puede dar patadas en la cara a los
-            enemigos, pero ahora puede parar los ataques enemigos con un
-            cuchillo y tiene algunos trucos más en la manga;
+            Nuevo pero familiar. Leon todavía puede dar patadas en la cara a los enemigos, pero ahora puede parar los
+            ataques enemigos con un cuchillo y tiene algunos trucos más en la manga;
           </li>
           <li>
-            La esencia de RE4. Con gráficos y jugabilidad modernizados, el
-            remake de RE4 conserva la esencia del original;
+            La esencia de RE4. Con gráficos y jugabilidad modernizados, el remake de RE4 conserva la esencia del
+            original;
           </li>
-          <li>
-            Nuevas secuencias. El remake de RE4 cuenta con una historia y
-            secuencias de juego nuevas y ampliadas;
-          </li>
+          <li>Nuevas secuencias. El remake de RE4 cuenta con una historia y secuencias de juego nuevas y ampliadas;</li>
           <li>Resident Evil 4 al mejor precio.</li>
         </ul>
         <p>
-          Una clase magistral de survival-horror. Cuando se lanzó por primera
-          vez en 2005, Resident Evil 4 redefinió por completo el género del
-          survival-horror. Ahora puedes disfrutar de uno de los mejores juegos
-          de la serie. Seis años después del brote en Racoon City, Leon Kennedy
-          recibe el encargo de encontrar a la hija del Presidente de los Estados
-          Unidos. La búsqueda lleva a Leon a un pequeño pueblo rural europeo
-          donde una nueva amenaza se ha apoderado de la población local y la ha
-          infectado. Compra Resident Evil 4 Código de Steam, y enfréntate a los
-          terroríficos enemigos en tu misión de encontrar a quien secuestró a la
-          hija del Presidente.
+          Una clase magistral de survival-horror. Cuando se lanzó por primera vez en 2005, Resident Evil 4 redefinió por
+          completo el género del survival-horror. Ahora puedes disfrutar de uno de los mejores juegos de la serie. Seis
+          años después del brote en Racoon City, Leon Kennedy recibe el encargo de encontrar a la hija del Presidente de
+          los Estados Unidos. La búsqueda lleva a Leon a un pequeño pueblo rural europeo donde una nueva amenaza se ha
+          apoderado de la población local y la ha infectado. Compra Resident Evil 4 Código de Steam, y enfréntate a los
+          terroríficos enemigos en tu misión de encontrar a quien secuestró a la hija del Presidente.
         </p>
       </div>
     </div>
@@ -328,7 +236,6 @@
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N"
-      crossorigin="anonymous"
-    ></script>
+      crossorigin="anonymous"></script>
   </body>
 </html>
