@@ -45,6 +45,42 @@ def tokens(request):
 def hk(request):
     context = {}
     return render(request, "pages/hk.html", context)
+
+def userAdd(request):
+    if request.method != "POST":
+        tipo = tipoUsuario.objects.all()
+        context = {"tipo": tipo}
+        return render(request, "pages/creacion_user.html", context)
+    else:
+        rut = request.POST["rut"]
+        nombre = request.POST["nombre"]
+        appPaterno = request.POST["appPaterno"]
+        appMaterno = request.POST["appMaterno"]
+        fecha = request.POST["fecha"]
+        tipo = request.POST["tipoUsuario"]
+        correo = request.POST["correo"]
+        telefono = request.POST["telefono"]
+
+        objTipo = tipoUsuario.objects.get(idTipoUsuario=tipo)
+        objUsuario = Usuario.objects.create(
+            rut=rut,
+            nombre=nombre,
+            appPaterno=appPaterno,
+            appMaterno=appMaterno,
+            fechaNacimiento=fecha,
+            tipoUsuario=objTipo,
+            correo=correo,
+            telefono=telefono,
+            activo=1,
+        )
+        objUsuario.save()
+        context = {"mensaje": "OK Registrado Correctamente"}
+        return render(request, "pages/creacion_user.html", context)
+
+
+
+
+
 """ 
 def ktn(request):
     context = {}

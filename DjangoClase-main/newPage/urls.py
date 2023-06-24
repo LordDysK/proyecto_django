@@ -12,5 +12,6 @@ urlpatterns = [
     path("Fh5",views.fh5,name="fh5"),
     path("seguridad",views.seguridad,name="seguridad"),
     path("catalogo",views.catalogo,name="catalogo"),
+    path("creacion_user",views.userAdd,name="login")
   
 ]
