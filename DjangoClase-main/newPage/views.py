@@ -76,6 +76,10 @@ def userAdd(request):
         objUsuario.save()
         context = {"mensaje": "OK Registrado Correctamente"}
         return render(request, "pages/creacion_user.html", context)
+    
+def nav(request):
+    context = {}
+    return render(request, "pages/navbar.html", context)
 
 
 
