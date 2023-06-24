@@ -4,18 +4,24 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    {% load bootstrap5 %} 
-    {% load static %} 
-    {% bootstrap_css%} 
-    {% bootstrap_javascript%}
+    {% load bootstrap5 %} {% load static %} {% bootstrap_css%} {% bootstrap_javascript%}
     <link rel="stylesheet" href="{% static 'css/styles.css'%}" />
   </head>
   <body>
     <!--Inicio Nav bar-->
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
       <div class="container-fluid">
-        <a class="navbar-brand" href="home.html"><img src="imagenes/logo3.jpg" alt="" width="120px" height="80px"></a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <a class="navbar-brand" href="home.html"
+          ><img src="{% static  'img/img/logo3.jpg' %}" alt width="120px" height="80px"
+        /></a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -27,12 +33,26 @@
               <a class="nav-link" href="catalogo.html">Catálogo</a>
             </li>
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false">
                 Tu Perfil
               </a>
               <ul class="dropdown-menu">
                 <li><a class="dropdown-item" href="tokens.html">Tokens</a></li>
-                <li><a class="dropdown-item" href="seguridad.html">Seguridad de Usuario</a></li>
+                <li>
+                  <a class="dropdown-item" href="seguridad.html">Seguridad de Usuario</a>
+                </li>
+                <li><hr class="dropdown-divider" /></li>
+                <button id="botonlog" onclick="document.getElementById('id01').style.display='block'">
+                  Iniciar Sesion
+                </button>
+                <button id="botonlogout" onclick="document.getElementById('id02').style.display='block'">
+                  Cerrar Sesion
+                </button>
               </ul>
             </li>
             <li class="nav-item">
@@ -40,70 +60,139 @@
             </li>
           </ul>
           <form class="d-flex" role="search">
-            <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
+            <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search" />
             <button class="btn btn-outline-success" type="submit">Buscar</button>
           </form>
         </div>
       </div>
     </nav>
-      <h1>Contáctanos</h1>
-  
-        <form>
-          <label for="nombre">Nombre:</label>
-          <input type="text" id="nombre" name="nombre" onblur="validarcampon(this)">
-          <span id="mensaje-error" style="color: red;"></span>
-          <br><br>
-    
-          <label for="correo">Correo electrónico:</label>
-          <input type="email" id="correo" name="correo" onblur="validarcampoc(this)">
-          <span id="mensaje-erroe" style="color:red;"></span>
-          <br><br>
-          <label for="mensaje">Mensaje:</label><br>
-          <textarea id="mensaje" name="mensaje"></textarea><br>
-    <br>
-          <label for="tipo">Tipo de consulta:</label>
-          <select id="tipo" name="tipo">
-            <option value="soporte">Soporte técnico</option>
-            <option value="pregunta">Preguntas generales</option>
-          </select><br>
-    
-          <button type="submit">Enviar</button>
-        </form>
-    
-          <br><br><br><br><br><br><br><br><br><br><br> 
-       <ul>
-          <li>Dirección: 666 Street Fighter, Viña del mar, Narnia</li>
-          <li>Correo electrónico: contacto@ADN-GAMES.com</li>
-          <li>Teléfono: +56 2 2953 1218</li>
-        </ul>
-        <footer>
-          <p>&copy; 2023 ADN-Game. Todos los derechos reservados.</p>
-         
-        </footer>
-  
-  
-  
-  
-  
-  
-  
-      
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js" integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N" crossorigin="anonymous"></script>
-      <script>
-        function validarcampon(campo) {
-          if (campo.value == "") {
-            document.getElementById("mensaje-error").innerHTML = "Por favor, complete este campo.";
-          } else {
-            document.getElementById("mensaje-error").innerHTML = "";
-          }
+    <!-- The Modal -->
+    <div id="id01" class="modal">
+      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal"
+        >&times;</span
+      >
+
+      <!-- Modal Content -->
+      <form class="modal-content animate" action="/action_page.php">
+        <div class="imgcontainer">
+          <img src="imagenes/username-icon-24.jpg" alt="Avatar" class="avatar" />
+        </div>
+
+        <div class="container">
+          <label for="uname"><b>Username</b></label>
+          <input type="text" placeholder="Enter Username" name="uname" required />
+
+          <label for="psw"><b>Password</b></label>
+          <input type="password" placeholder="Enter Password" name="psw" required />
+
+          <button class="btnloginchico" type="submit">Login</button>
+          <label class="remember">
+            <input type="checkbox" checked="checked" name="remember" />
+            Recordarme
+          </label>
+        </div>
+
+        <div class="container" style="background-color: #f1f1f1">
+          <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn1">
+            Cancel
+          </button>
+          <span class="olvido">Forgot <a href="#" class="olvido">password?</a></span>
+        </div>
+      </form>
+    </div>
+    <div id="id02" class="modal modal2">
+      <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal"
+        >&times;</span
+      >
+      <form class="modal-content animate" action="/action_page.php">
+        <div class="imgcontainer">
+          <h1>Desea Cerrar Sesion?</h1>
+        </div>
+
+        <div class="container"></div>
+
+        <div class="container" style="background-color: #f1f1f1">
+          <button
+            type="button"
+            onclick="document.getElementById('id02').style.display='none'"
+            class="cancelbtn cancel1">
+            Aceptar
+          </button>
+          <button
+            type="button"
+            onclick="document.getElementById('id02').style.display='none'"
+            class="cancelbtn1 sumbit1">
+            Cancelar
+          </button>
+        </div>
+      </form>
+    </div>
+    <script>
+      // Get the modal
+      var modal = document.getElementById("id01");
+
+      // When the user clicks anywhere outside of the modal, close it
+      window.onclick = function (event) {
+        if (event.target == modal) {
+          modal.style.display = "none";
         }
-        function validarcampoc(campo){
-          if (campo.value=="") {
-            document.getElementById("mensaje-erroe").innerHTML="Por favor, complete este campo."
-          }else{
-            document.getElementById("mensaje-erroe").innerHTML=":D"
-          }
+      };
+    </script>
+    <!--Fin Nav bar-->
+
+    <h1>Contáctanos</h1>
+
+    <form>
+      <label for="nombre">Nombre:</label>
+      <input type="text" id="nombre" name="nombre" onblur="validarcampon(this)" />
+      <span id="mensaje-error" style="color: red"></span>
+      <br /><br />
+
+      <label for="correo">Correo electrónico:</label>
+      <input type="email" id="correo" name="correo" onblur="validarcampoc(this)" />
+      <span id="mensaje-erroe" style="color: red"></span>
+      <br /><br />
+      <label for="mensaje">Mensaje:</label><br />
+      <textarea id="mensaje" name="mensaje"></textarea><br />
+      <br />
+      <label for="tipo">Tipo de consulta:</label>
+      <select id="tipo" name="tipo">
+        <option value="soporte">Soporte técnico</option>
+        <option value="pregunta">Preguntas generales</option></select
+      ><br />
+
+      <button type="submit">Enviar</button>
+    </form>
+
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+    <ul>
+      <li>Dirección: 666 Street Fighter, Viña del mar, Narnia</li>
+      <li>Correo electrónico: contacto@ADN-GAMES.com</li>
+      <li>Teléfono: +56 2 2953 1218</li>
+    </ul>
+    <footer>
+      <p>&copy; 2023 ADN-Game. Todos los derechos reservados.</p>
+    </footer>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N"
+      crossorigin="anonymous"></script>
+    <script>
+      function validarcampon(campo) {
+        if (campo.value == "") {
+          document.getElementById("mensaje-error").innerHTML = "Por favor, complete este campo.";
+        } else {
+          document.getElementById("mensaje-error").innerHTML = "";
         }
-      </script>
+      }
+      function validarcampoc(campo) {
+        if (campo.value == "") {
+          document.getElementById("mensaje-erroe").innerHTML = "Por favor, complete este campo.";
+        } else {
+          document.getElementById("mensaje-erroe").innerHTML = ":D";
+        }
+      }
+    </script>
   </body>
-  </html>
+</html>

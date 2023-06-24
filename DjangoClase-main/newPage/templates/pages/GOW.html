@@ -5,18 +5,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ADN-Games</title>
-    {% load bootstrap5 %} 
-    {% bootstrap_css%} 
-    {% bootstrap_javascript%} 
-    {% load static %}
-    <link rel="stylesheet" href="{% static 'css/styles.css'%}"/>
+    {% load bootstrap5 %} {% bootstrap_css%} {% bootstrap_javascript%} {% load static %}
+    <link rel="stylesheet" href="{% static 'css/styles.css'%}" />
   </head>
   <body>
     <!--Inicio Nav bar-->
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
       <div class="container-fluid">
-        <a class="navbar-brand" href="home.html"><img src="imagenes/logo3.jpg" alt="" width="120px" height="80px"></a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <a class="navbar-brand" href="home.html"><img src="imagenes/logo3.jpg" alt="" width="120px" height="80px" /></a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -28,15 +32,26 @@
               <a class="nav-link" href="catalogo.html">Catálogo</a>
             </li>
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false">
                 Tu Perfil
               </a>
               <ul class="dropdown-menu">
                 <li><a class="dropdown-item" href="tokens.html">Tokens</a></li>
-                <li><a class="dropdown-item" href="seguridad.html">Seguridad de Usuario</a></li>
-                <li><hr class="dropdown-divider"></li>
-                <button id="botonlog" onclick="document.getElementById('id01').style.display='block'">Iniciar Sesion</button>
-                <button id="botonlogout" onclick="document.getElementById('id02').style.display='block'">Cerrar Sesion</button>
+                <li>
+                  <a class="dropdown-item" href="seguridad.html">Seguridad de Usuario</a>
+                </li>
+                <li><hr class="dropdown-divider" /></li>
+                <button id="botonlog" onclick="document.getElementById('id01').style.display='block'">
+                  Iniciar Sesion
+                </button>
+                <button id="botonlogout" onclick="document.getElementById('id02').style.display='block'">
+                  Cerrar Sesion
+                </button>
               </ul>
             </li>
             <li class="nav-item">
@@ -44,81 +59,182 @@
             </li>
           </ul>
           <form class="d-flex" role="search">
-            <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
+            <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search" />
             <button class="btn btn-outline-success" type="submit">Buscar</button>
           </form>
         </div>
       </div>
     </nav>
-    <br>
+    <!-- The Modal -->
+    <div id="id01" class="modal">
+      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal"
+        >&times;</span
+      >
+
+      <!-- Modal Content -->
+      <form class="modal-content animate" action="/action_page.php">
+        <div class="imgcontainer">
+          <img src="imagenes/username-icon-24.jpg" alt="Avatar" class="avatar" />
+        </div>
+
+        <div class="container">
+          <label for="uname"><b>Username</b></label>
+          <input type="text" placeholder="Enter Username" name="uname" required />
+
+          <label for="psw"><b>Password</b></label>
+          <input type="password" placeholder="Enter Password" name="psw" required />
+
+          <button class="btnloginchico" type="submit">Login</button>
+          <label class="remember">
+            <input type="checkbox" checked="checked" name="remember" />
+            Recordarme
+          </label>
+        </div>
+
+        <div class="container" style="background-color: #f1f1f1">
+          <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn1">
+            Cancel
+          </button>
+          <span class="olvido">Forgot <a href="#" class="olvido">password?</a></span>
+        </div>
+      </form>
+    </div>
+    <div id="id02" class="modal modal2">
+      <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal"
+        >&times;</span
+      >
+      <form class="modal-content animate" action="/action_page.php">
+        <div class="imgcontainer">
+          <h1>Desea Cerrar Sesion?</h1>
+        </div>
+
+        <div class="container"></div>
+
+        <div class="container" style="background-color: #f1f1f1">
+          <button
+            type="button"
+            onclick="document.getElementById('id02').style.display='none'"
+            class="cancelbtn cancel1">
+            Aceptar
+          </button>
+          <button
+            type="button"
+            onclick="document.getElementById('id02').style.display='none'"
+            class="cancelbtn1 sumbit1">
+            Cancelar
+          </button>
+        </div>
+      </form>
+    </div>
+    <script>
+      // Get the modal
+      var modal = document.getElementById("id01");
+
+      // When the user clicks anywhere outside of the modal, close it
+      window.onclick = function (event) {
+        if (event.target == modal) {
+          modal.style.display = "none";
+        }
+      };
+    </script>
+    <!--Fin Nav bar-->
+    <br />
     <div class="container3">
       <div class="row">
         <div class="col-3">
-          <img src="img/img/gow.jpg" width="200" height="250" class="img-thumbnail w-50 m-auto">
+          <img src="{%static 'img/img//GOW.jpg'%}" width="200" height="250" class="img-fluid" />
         </div>
         <div class="col-md-2">
           <h2>God of War</h2>
           <p>$28EU</p>
-          <p2 style="text-align: center;">En God of War Viaja a un mundo oscuro y elemental de criaturas temibles</p2>
-          <br>
+          <p2 style="text-align: center">En God of War Viaja a un mundo oscuro y elemental de criaturas temibles</p2>
+          <br />
           <button class="bg-success border-2">Comprar</button>
         </div>
-        <br>
+        <br />
         <div class="col-6">
           <center>
             <div id="CarruselRe4" class="carousel carousel-dark slide-1">
               <div class="carousel-indicators">
-                <button type="button" data-bs-target="#CarruselRe4" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button
+                  type="button"
+                  data-bs-target="#CarruselRe4"
+                  data-bs-slide-to="0"
+                  class="active"
+                  aria-current="true"
+                  aria-label="Slide 1"></button>
                 <button type="button" data-bs-target="#CarruselRe4" data-bs-slide-to="1" aria-label="Slide 2"></button>
                 <button type="button" data-bs-target="#CarruselRe4" data-bs-slide-to="2" aria-label="Slide 3"></button>
               </div>
               <div class="carousel-inner">
                 <div class="carousel-item active" data-bs-interval="10000">
-                  <img src="imagenes/gowcaarrusel1.jpg" class="d-block w-100 imagenesre4" alt="...">
-                  <div class="carousel-caption d-none d-md-block">
-                  </div>
+                  <img src="{%static 'img/img/gowcaarrusel1.jpg'%}" class="d-block w-100 imagenesre4" alt="..." />
+                  <div class="carousel-caption d-none d-md-block"></div>
                 </div>
                 <div class="carousel-item" data-bs-interval="2000">
-                  <img src="imagenes/gowcarrusel2.jpg " class="d-block w-100 imagenesre4" alt="...">
-                  <div class="carousel-caption d-none d-md-block">
-    
-                  </div>
+                  <img src="{%static 'img/img/gowcarrusel2.jpg'%} " class="d-block w-100 imagenesre4" alt="..." />
+                  <div class="carousel-caption d-none d-md-block"></div>
                 </div>
                 <div class="carousel-item">
-                  <img src="imagenes/gowcarrusel3.jpg" class="d-block w-100 imagenesre4" alt="...">
-                  <div class="carousel-caption d-none d-md-block">
-                  </div>
+                  <img src="{%static 'img/img/gowcarrusel3.jpg'%}" class="d-block w-100 imagenesre4" alt="..." />
+                  <div class="carousel-caption d-none d-md-block"></div>
                 </div>
               </div>
-              <br>
-              <br>
+              <br />
+              <br />
             </div>
           </center>
         </div>
       </div>
     </div>
-  
+
     <div class="DescripcionRe4">
       <h2>God of War</h2>
-      <p>Kratos ha dejado atrás su venganza contra los dioses del Olimpo y vive ahora como un hombre en los dominios de los dioses y monstruos nórdicos</p>
+      <p>
+        Kratos ha dejado atrás su venganza contra los dioses del Olimpo y vive ahora como un hombre en los dominios de
+        los dioses y monstruos nórdicos
+      </p>
       <p>En este mundo cruel e implacable debe luchar para sobrevivir… y enseñar a su hijo a hacerlo también.</p>
-      <button class="btn btn-primary mt-3" data-bs-toggle="collapse" data-bs-target="#more-info" aria-expanded="false" aria-controls="more-info">Ver más</button>
+      <button
+        class="btn btn-primary mt-3"
+        data-bs-toggle="collapse"
+        data-bs-target="#more-info"
+        aria-expanded="false"
+        aria-controls="more-info">
+        Ver más
+      </button>
       <div class="collapse" id="more-info">
         <h3>Características del juego God of War</h3>
         <ul>
           <li>
-              Gráficos alucinantes mejorados en PC. Disfruta de una auténtica resolución 4K en dispositivos compatibles, [MU1] con frecuencias de fotogramas desbloqueadas para un rendimiento máximo. Modifica los ajustes con una gran variedad de opciones y configuraciones gráficas, como el sombreado de mayor resolución, reflejos de espacios en pantalla mejorados, la incorporación de GTAO y SSDO, y mucho más.</li>
-          <li>Conjunción de calidad y rendimiento. Aprovecha la potencia de la IA del supermuestreo de aprendizaje profundo (DLSS) de NVIDIA para mejorar la frecuencia de fotogramas y generar imágenes nítidas llenas de belleza en una selección de GPU de NVIDIA. Usa la tecnología NVIDIA Reflex de baja latencia para reaccionar más rápidamente y asestar combos más fuertes con las mecánicas de respuesta que tanto ansías en las GPU de GeForce.</li>
-          <li>Personalización de los controles
-              Juega a tu manera. Gracias a la compatibilidad con los mandos inalámbricos DUALSHOCK®4 y DUALSENSE®, una gran variedad de mandos diferentes y la plena capacidad de personalizar las asignaciones para teclado y ratón, podrás modificar cada acción según tu estilo de juego.</li>
-      
+            Gráficos alucinantes mejorados en PC. Disfruta de una auténtica resolución 4K en dispositivos compatibles,
+            [MU1] con frecuencias de fotogramas desbloqueadas para un rendimiento máximo. Modifica los ajustes con una
+            gran variedad de opciones y configuraciones gráficas, como el sombreado de mayor resolución, reflejos de
+            espacios en pantalla mejorados, la incorporación de GTAO y SSDO, y mucho más.
+          </li>
+          <li>
+            Conjunción de calidad y rendimiento. Aprovecha la potencia de la IA del supermuestreo de aprendizaje
+            profundo (DLSS) de NVIDIA para mejorar la frecuencia de fotogramas y generar imágenes nítidas llenas de
+            belleza en una selección de GPU de NVIDIA. Usa la tecnología NVIDIA Reflex de baja latencia para reaccionar
+            más rápidamente y asestar combos más fuertes con las mecánicas de respuesta que tanto ansías en las GPU de
+            GeForce.
+          </li>
+          <li>
+            Personalización de los controles Juega a tu manera. Gracias a la compatibilidad con los mandos inalámbricos
+            DUALSHOCK®4 y DUALSENSE®, una gran variedad de mandos diferentes y la plena capacidad de personalizar las
+            asignaciones para teclado y ratón, podrás modificar cada acción según tu estilo de juego.
+          </li>
         </ul>
-        <p>En esta nueva entrega Kratos es acompañado por su hijo Atreus, a quien deberá enseñar a sobrevivir en los 9 mundos de la cosmología nórdica antigua y será su acompañante y enfoque principal durante toda la aventura.</p>
+        <p>
+          En esta nueva entrega Kratos es acompañado por su hijo Atreus, a quien deberá enseñar a sobrevivir en los 9
+          mundos de la cosmología nórdica antigua y será su acompañante y enfoque principal durante toda la aventura.
+        </p>
       </div>
     </div>
-    
-    
-   
-        
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js" integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N" crossorigin="anonymous"></script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N"
+      crossorigin="anonymous"></script>
   </body>
+</html>
