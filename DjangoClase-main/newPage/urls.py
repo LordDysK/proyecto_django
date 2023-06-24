@@ -13,6 +13,6 @@ urlpatterns = [
     path("seguridad",views.seguridad,name="seguridad"),
     path("catalogo",views.catalogo,name="catalogo"),
     path("creacion_user",views.userAdd,name="creacio0n_user"),
-    path("navbar",views.nav,name="navbar")
-  
+    path("navbar",views.nav,name="navbar"),
+    path("tokens",views.tokens,name="tokens")
 ]
