@@ -81,7 +81,9 @@ def nav(request):
     context = {}
     return render(request, "pages/navbar.html", context)
 
-
+def tokens(request):
+    context = {}
+    return render(request, "pages/tokens.html", context)
 
 
 
