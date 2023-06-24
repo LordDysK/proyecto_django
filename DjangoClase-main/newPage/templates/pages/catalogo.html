@@ -17,7 +17,7 @@
   <!--Inicio Nav bar-->
   <nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid">
-      <a class="navbar-brand" href="home.html"><img src="{% static 'img/img/logo3.jpg'%}" alt="" width="120px" height="80px"></a>
+      <a class="navbar-brand" href="home.html"><img src="imagenes/logo3.jpg" alt="" width="120px" height="80px"></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -36,9 +36,6 @@
             <ul class="dropdown-menu">
               <li><a class="dropdown-item" href="tokens.html">Tokens</a></li>
               <li><a class="dropdown-item" href="seguridad.html">Seguridad de Usuario</a></li>
-              <li><hr class="dropdown-divider"></li>
-              <button id="botonlog" onclick="document.getElementById('id01').style.display='block'">Iniciar Sesion</button>
-              <button id="botonlogout" onclick="document.getElementById('id02').style.display='block'">Cerrar Sesion</button>
             </ul>
           </li>
           <li class="nav-item">
@@ -52,108 +49,56 @@
       </div>
     </div>
   </nav>
-  <!-- The Modal -->
-<div id="id01" class="modal">
-<span onclick="document.getElementById('id01').style.display='none'"
-class="close" title="Close Modal">&times;</span>
-
-<!-- Modal Content -->
-<form class="modal-content animate" action="/action_page.php">
-<div class="imgcontainer">
-  <img src="imagenes/username-icon-24.jpg" alt="Avatar" class="avatar">
-</div>
-
-<div class="container">
-  <label for="uname"><b>Username</b></label>
-  <input type="text" placeholder="Enter Username" name="uname" required>
-
-  <label for="psw"><b>Password</b></label>
-  <input type="password" placeholder="Enter Password" name="psw" required>
-
-  <button class="btnloginchico" type="submit">Login</button>
-  <label class="remember">
-    <input type="checkbox" checked="checked" name="remember"> Recordarme
-  </label>
-</div>
-
-<div class="container" style="background-color:#f1f1f1">
-  <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn1">Cancel</button>
-  <span class="olvido">Forgot <a href="#" class="olvido">password?</a></span>
-</div>
-</form>
-</div>
-<div id="id02" class="modal modal2">
-<span onclick="document.getElementById('id02').style.display='none'"
-class="close" title="Close Modal">&times;</span>
-<form class="modal-content animate" action="/action_page.php">
-<div class="imgcontainer">
-<h1>Desea Cerrar Sesion?  </h1>
-</div>
-
-<div class="container">
-
-
-</div>
-
-<div class="container" style="background-color:#f1f1f1">
-<button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn cancel1">Aceptar</button>
-<button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn1 sumbit1">Cancelar</button>
-</div>
-</form>
-
-</div>
-
-      </nav><!-- barra -->
       <div class="container">
       <div class="row row-cols-1 row-cols-md-3 g-4">
         <div class="col">
           <div class="card ">
-            <a href="Re4.html"><img src="{% static 'img/img/Re4.jpg'%}" class="img-thumbnail w-75 m-auto " alt="..." ></a>
+            <a href="Re4.html"><img src="imagenes/Re4.jpg" class="img-thumbnail w-75 m-auto " alt="..." ></a>
             <div class="card-body">
               <h5 class="card-title">Resident Evil 4</h5>
               <p class="card-text">$37.000CLP</p>
-              <a class="btn btn-primary" href="{%url 're4'%}" role="button">Comprar</a>
+              <a class="btn btn-primary" href="Re4.html" role="button">Comprar</a>
             </div>
           </div>
         </div>
         <div class="col">
           <div class="card ">
-            <a href="HK.html"><img src="{% static 'img/img/hollow.jpg'%}" class="img-thumbnail w-75 m-auto " alt="..."></a>
+            <a href="HK.html"><img src="imagenes/hollow.jpg" class="img-thumbnail w-75 m-auto " alt="..."></a>
             <div class="card-body">
               <h5 class="card-title">Hollow Knight</h5>
               <p class="card-text">$8.000CLP</p>
-              <a class="btn btn-primary" href="{%url 'hk'%}" role="button">Comprar</a>
+              <a class="btn btn-primary" href="HK.html" role="button">Comprar</a>
             </div>
           </div>
         </div>
         <div class="col">
           <div class="card">
-            <a href="KTN.html"><img src="{% static 'img/img/katanazero.jpg'%}" class="img-thumbnail w-75 m-auto" alt="..."></a>
+            <a href="KTN.html"><img src="imagenes/katanazero.jpg" class="img-thumbnail w-75 m-auto" alt="..."></a>
             <div class="card-body">
               <h5 class="card-title">Katana Zero</h5>
               <p class="card-text">$5.500CLP</p>
-              <a class="btn btn-primary" href="{%url 'ktn'%}" role="button">Comprar</a>
+              <a class="btn btn-primary" href="KTN.html" role="button">Comprar</a>
             </div>
           </div>
         </div>
         <div class="col">
           <div class="card ">
-            <img src="{%static 'img/img/gow.jpg'%}" class="img-thumbnail w-75 m-auto " alt="...">
+            <img src="imagenes/gow.jpg" class="img-thumbnail w-75 m-auto " alt="...">
             <div class="card-body">
               <h5 class="card-title">God of War(2018)</h5>
               <p class="card-text">$30.000CLP</p>
-              <a class="btn btn-primary" href="{%url 'Gow'%}" role="button">Comprar</a>
+              <a class="btn btn-primary" href="GOW.html" role="button">Comprar</a>
 
             </div>
           </div>
         </div>
         <div class="col">
             <div class="card ">
-              <img src="{%static 'img/img/forza.jpg'%}" class="img-thumbnail w-75 m-auto " alt="...">
+              <img src="imagenes/forza.jpg" class="img-thumbnail w-75 m-auto " alt="...">
               <div class="card-body">
-                <h5 color="black" class="card-title" >Forza Horizon 5</h5>
+                <h5 class="card-title">Forza Horizon 5</h5>
                 <p class="card-text">$40.000CLP</p>
-                <a class="btn btn-primary" href="{%url 'fh5'%}" role="button">Comprar</a>
+                <a class="btn btn-primary" href="FH5.html" role="button">Comprar</a>
 
               </div>
             </div>
@@ -172,18 +117,6 @@ class="close" title="Close Modal">&times;</span>
       </div> </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js" integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N" crossorigin="anonymous"></script>
-    <script>
-      // Get the modal
-      var modal = document.getElementById('id01');
-      
-      
-      // When the user clicks anywhere outside of the modal, close it
-      window.onclick = function(event) {
-      if (event.target == modal) {
-        modal.style.display = "none";
-      }
-      }
-      
-      </script>
+
 </body>
 </html>
