@@ -1,5 +1,5 @@
 body{
-    background-color: #4e1b32;
+    background-color: #ffffff;
     color: #ffffff;
     font-size: 20px;
     text-align: center;
@@ -108,6 +108,7 @@ a{
 	display: flex;
 	max-width: 1100px;
 	margin: auto;
+  color: #000;
 }
 .title-cards{
 	width: 100%;
@@ -118,6 +119,13 @@ a{
 	text-align: center;
 	color: #000000;
 }
+
+.card-body{
+  text-emphasis-color: #000;
+  color: #000;
+
+}
+
 .card{
 	width: 70%;
 	margin: 20px;
@@ -462,9 +470,7 @@ form {
   background-color: #04AA6D;
 }
 
-.navbar-brand {
-  background-color: #fff; /* Color de fondo blanco */
-  color: #000; /* Color de texto negro */
+.container2{
+  height: 50%;
+  width: 50%;
 }
-
-
