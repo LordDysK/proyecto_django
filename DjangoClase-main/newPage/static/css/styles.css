@@ -462,4 +462,9 @@ form {
   background-color: #04AA6D;
 }
 
+.navbar-brand {
+  background-color: #fff; /* Color de fondo blanco */
+  color: #000; /* Color de texto negro */
+}
+
 
