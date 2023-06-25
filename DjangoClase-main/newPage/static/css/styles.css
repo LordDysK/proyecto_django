@@ -1,10 +1,10 @@
-body .navbar {
+.navbar {
   background-color: #fff; /* Color de fondo blanco */
   color: #000; /* Color de texto negro */
 }
 
-body .navbar a.nav-link,
-body .navbar a.dropdown-item {
+.navbar a.nav-link,
+.navbar a.dropdown-item {
   color: #000; /* Color de texto negro */
 }
 
@@ -159,6 +159,7 @@ a{
 .card .contenido-card{
 	padding: 15px;
 	text-align: center;
+  image-orientation: center;
 }
 .card .contenido-card h3{
 	margin-bottom: 15px;
