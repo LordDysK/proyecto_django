@@ -3,6 +3,11 @@
   text-emphasis-color: #000;
 }
 
+.navbar a.nav-link {
+  color: #000; /* Color de texto negro */
+}
+
+
 body{
     background-color: #4e1b32;
     color: #ffffff;
