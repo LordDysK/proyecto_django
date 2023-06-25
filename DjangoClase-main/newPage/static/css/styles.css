@@ -1,12 +1,3 @@
-.navbar {
-  background-color: #fff; /* Color de fondo blanco */
-  color: #000; /* Color de texto negro */
-}
-
-.navbar a.nav-link,
-.navbar a.dropdown-item {
-  color: #000; /* Color de texto negro */
-}
 
 .body{
     background-color: #4e1b32;
