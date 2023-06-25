@@ -1,4 +1,14 @@
-body{
+body .navbar {
+  background-color: #fff; /* Color de fondo blanco */
+  color: #000; /* Color de texto negro */
+}
+
+body .navbar a.nav-link,
+body .navbar a.dropdown-item {
+  color: #000; /* Color de texto negro */
+}
+
+.body{
     background-color: #4e1b32;
     color: #ffffff;
     font-size: 20px;
@@ -473,13 +483,4 @@ form {
 .container2{
   height: 50%;
   width: 50%;
-}
-
-.navbar {
-  background-color: #fff; /* Color de fondo blanco */
-}
-
-.navbar a.nav-link,
-.navbar a.dropdown-item {
-  color: #000 !important; /* Color de texto negro */
 }
