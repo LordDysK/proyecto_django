@@ -36,9 +36,6 @@
             <ul class="dropdown-menu">
               <li><a class="dropdown-item" href="tokens.html">Tokens</a></li>
               <li><a class="dropdown-item" href="seguridad.html">Seguridad de Usuario</a></li>
-              <li><hr class="dropdown-divider"></li>
-              <button id="botonlog" onclick="document.getElementById('id01').style.display='block'">Iniciar Sesion</button>
-              <button id="botonlogout" onclick="document.getElementById('id02').style.display='block'">Cerrar Sesion</button>
             </ul>
           </li>
           <li class="nav-item">
@@ -51,59 +48,7 @@
         </form>
       </div>
     </div>
-  </nav>
-  <!-- The Modal -->
-<div id="id01" class="modal">
-<span onclick="document.getElementById('id01').style.display='none'"
-class="close" title="Close Modal">&times;</span>
-
-<!-- Modal Content -->
-<form class="modal-content animate" action="/action_page.php">
-<div class="imgcontainer">
-  <img src="imagenes/username-icon-24.jpg" alt="Avatar" class="avatar">
-</div>
-
-<div class="container">
-  <label for="uname"><b>Username</b></label>
-  <input type="text" placeholder="Enter Username" name="uname" required>
-
-  <label for="psw"><b>Password</b></label>
-  <input type="password" placeholder="Enter Password" name="psw" required>
-
-  <button class="btnloginchico" type="submit">Login</button>
-  <label class="remember">
-    <input type="checkbox" checked="checked" name="remember"> Recordarme
-  </label>
-</div>
-
-<div class="container" style="background-color:#f1f1f1">
-  <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn1">Cancel</button>
-  <span class="olvido">Forgot <a href="#" class="olvido">password?</a></span>
-</div>
-</form>
-</div>
-<div id="id02" class="modal modal2">
-<span onclick="document.getElementById('id02').style.display='none'"
-class="close" title="Close Modal">&times;</span>
-<form class="modal-content animate" action="/action_page.php">
-<div class="imgcontainer">
-<h1>Desea Cerrar Sesion?  </h1>
-</div>
-
-<div class="container">
-
-
-</div>
-
-<div class="container" style="background-color:#f1f1f1">
-<button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn cancel1">Aceptar</button>
-<button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn1 sumbit1">Cancelar</button>
-</div>
-</form>
-
-</div>
-
-      </nav><!-- barra -->
+  </nav><!-- barra -->
       <div class="container">
       <div class="row row-cols-1 row-cols-md-3 g-4">
         <div class="col">
