@@ -1,5 +1,5 @@
 body{
-    background-color: #ffffff;
+    background-color: #4e1b32;
     color: #ffffff;
     font-size: 20px;
     text-align: center;
@@ -473,4 +473,13 @@ form {
 .container2{
   height: 50%;
   width: 50%;
+}
+
+.navbar {
+  background-color: #fff; /* Color de fondo blanco */
+}
+
+.navbar a.nav-link,
+.navbar a.dropdown-item {
+  color: #000 !important; /* Color de texto negro */
 }
