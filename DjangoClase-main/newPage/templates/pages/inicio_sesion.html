@@ -64,6 +64,7 @@
           <h2>Inicio Sesion<h2/>    
             <center>
             <form action="" method='POST'>
+                <br>
                 {% csrf_token %}
                 <img src="{% static 'img/img/Spiderman.jpg' %}"
                  class='img-thumbnail w-25 h-25 rounded-circle mb-3'><br>
@@ -74,6 +75,7 @@
                 <input type="password" class='form-control' name='password' id='password'
                     placeholder='Ingrese su contraseña'><br>
                 <input type="submit" value='Conectar' class='btn btn-success'> 
+                <br>
             </form>
             </center>
         <div/>
