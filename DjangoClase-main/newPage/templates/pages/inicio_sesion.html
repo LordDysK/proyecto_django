@@ -13,56 +13,69 @@
   </head>
   <body>
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="{%url 'home'%}"
-          ><img src="{% static  'img/img/logo3.jpg' %}" alt="" width="120px" height="80px"
-        /></a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="{%url 'home'%}">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{%url 'catalogo'%}">Catálogo</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a
-                class="nav-link dropdown-toggle"
-                href="#"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false">
-                Tu Perfil
-              </a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="{%url 'tokens'%}">Tokens</a></li>
-                <li><a class="dropdown-item" href="{%url 'seguridad'%}">Seguridad de Usuario</a></li>
-              </ul>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{%url 'contacto'%}">Contacto</a>
-            </li>
-          </ul>
+        <div class="container-fluid">
+          <a class="navbar-brand" href="{%url 'home'%}"
+            ><img src="{% static  'img/img/logo3.jpg' %}" alt="" width="120px" height="80px"
+          /></a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="{%url 'home'%}">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{%url 'catalogo'%}">Catálogo</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false">
+                  Tu Perfil
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="{%url 'inicio_sesion'%}">Iniciar Sesion</a></li>
+                  <li><a class="dropdown-item" href="{%url 'tokens'%}">Tokens</a></li>
+                  <li><a class="dropdown-item" href="{%url 'seguridad'%}">Seguridad de Usuario</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{%url 'contacto'%}">Contacto</a>
+              </li>
+            </ul>
+          </div>
         </div>
-      </div>
-    </nav>
-    <br/>
+      </nav>
+    <br>
     <div class="container_login">
       <div class='row'>
         <div class='col-lg-6 text-center mx-auto fw-bolder p-5'>
-          <h2>Inicio Sesion<h2/>
-
-
+          <h2>Inicio Sesion<h2/>    
+            <center>
+            <form action="" method='POST'>
+                {% csrf_token %}
+                <img src="{% static 'img/img/Spiderman.jpg' %}"
+                 class='img-thumbnail w-25 h-25 rounded-circle mb-3'><br>
+                <label for="username" class='form-label'>Nombre Usuario</label>
+                <input type="text" class='form-control' name='username' id='username'
+                    placeholder='Ingrese su usuario'><br>
+                <label for="password" class='form-label'>Contraseña</label>
+                <input type="password" class='form-control' name='password' id='password'
+                    placeholder='Ingrese su contraseña'><br>
+                <input type="submit" value='Conectar' class='btn btn-success'> 
+            </form>
+            </center>
         <div/>
       <div/>
     </div>
