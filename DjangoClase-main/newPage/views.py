@@ -85,6 +85,9 @@ def tokens(request):
     context = {}
     return render(request, "pages/tokens.html", context)
 
+def inicio_sesion(request):
+    context = {}
+    return render(request, "pages/inicio_sesion.html", context)
 
 
 """ 
