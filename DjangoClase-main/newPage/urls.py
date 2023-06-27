@@ -15,4 +15,5 @@ urlpatterns = [
     path("navbar",views.nav,name="navbar"),
     path("tokens",views.tokens,name="tokens"),
     path("inicio_sesion",views.inicio_sesion,name="inicio_sesion"),
+    path("creacion_user",views.creacion_user,name="creacion_user"),
 ]

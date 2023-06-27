@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Usuario
+from .models import Usuario, tipoUsuario
 from .forms import UsuarioForm
 
 # Create your views here.
@@ -88,6 +88,10 @@ def tokens(request):
 def inicio_sesion(request):
     context = {}
     return render(request, "pages/inicio_sesion.html", context)
+
+def creacion_user(request):
+    context = {}
+    return render(request, "pages/creacion_user.html", context)
 
 
 """ 
