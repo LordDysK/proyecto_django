@@ -9,10 +9,3 @@ class Migration(migrations.Migration):
         ('newPage', '0001_initial'),
     ]
 
-    operations = [
-        migrations.AlterField(
-            model_name='tipousuario',
-            name='idTipoUsuario',
-            field=models.AutoField(db_column='idTipo', primary_key=True, serialize=False, verbose_name='ID_tipo_Usuario'),
-        ),
-    ]
