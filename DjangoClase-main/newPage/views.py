@@ -52,7 +52,7 @@ def userAdd(request):
         context = {"tipo": tipo}
         return render(request, "pages/creacion_user.html", context)
     else:
-        Nom = request.POST["Nom"]
+        Nom = request.POST["Nombre Usuario"]
         nombre = request.POST["nombre"]
         appPaterno = request.POST["appPaterno"]
         fecha = request.POST["fecha"]
@@ -61,7 +61,7 @@ def userAdd(request):
 
         objTipo = tipoUsuario.objects.get(idTipoUsuario=tipo)
         objUsuario = Usuario.objects.create(
-            rut=rut,
+            Nom=Nom,
             nombre=nombre,
             appPaterno=appPaterno,
             fechaNacimiento=fecha,
