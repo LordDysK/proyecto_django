@@ -52,7 +52,7 @@ def userAdd(request):
         context = {"tipo": tipo}
         return render(request, "pages/creacion_user.html", context)
     else:
-        rut = request.POST["rut"]
+        Nom = request.POST["Nom"]
         nombre = request.POST["nombre"]
         appPaterno = request.POST["appPaterno"]
         fecha = request.POST["fecha"]

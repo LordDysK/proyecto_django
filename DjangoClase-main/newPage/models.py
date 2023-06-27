@@ -13,9 +13,9 @@ class tipoUsuario(models.Model):
 
 
 class Usuario(models.Model):
-    # rut - Nombre - AppPaterno - appMaterno - fecha Nacimiento
+    # Nombre Usuario - Nombre - AppPaterno - appMaterno - fecha Nacimiento
     # tipo - correo - telefono - activo
-    rut = models.CharField(max_length=10, primary_key=True)
+    Nom = models.CharField(max_length=30, primary_key=True)
     nombre = models.CharField(max_length=50, blank=False, null=False)
     appPaterno = models.CharField(max_length=30, blank=False, null=False)
     fechaNacimiento = models.DateField(blank=False, null=False)
