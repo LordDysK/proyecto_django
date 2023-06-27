@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Usuario, tipoUsuario
+from .models import Usuario
 from .forms import UsuarioForm
 
 # Create your views here.

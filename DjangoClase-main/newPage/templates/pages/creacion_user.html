@@ -46,6 +46,7 @@
                 </a>
                 <ul class="dropdown-menu">
                   <li><a class="dropdown-item" href="{%url 'inicio_sesion'%}">Iniciar Sesion</a></li>
+                  <li><a class="dropdown-item" href="{%url 'creacion_user'%}">Crear Cuenta</a></li>
                   <li><a class="dropdown-item" href="{%url 'tokens'%}">Tokens</a></li>
                   <li><a class="dropdown-item" href="{%url 'seguridad'%}">Seguridad de Usuario</a></li>
                 </ul>
@@ -64,17 +65,35 @@
           <h2>Inicio Sesion<h2/>    
             <center>
             <form action="" method='POST'>
+              <form action="userAdd" method="POST">
                 {% csrf_token %}
-                <img src="{% static 'img/img/Spiderman.jpg' %}"
-                 class='img-thumbnail w-25 h-25 rounded-circle mb-3'><br>
-                <label for="username" class='form-label'>Nombre Usuario</label>
-                <input type="text" class='form-control' name='username' id='username'
-                    placeholder='Ingrese su usuario'><br>
-                <label for="password" class='form-label'>Contraseña</label>
-                <input type="password" class='form-control' name='password' id='password'
-                    placeholder='Ingrese su contraseña'><br>
-                <input type="submit" value='Conectar' class='btn btn-success'> 
-            </form>
+                <div>
+                    <label for="rut" class="form-label">Rut</label>
+                    <input type="text" name="rut" id="rut" class="form-control">
+                </div>
+                <div>
+                    <label for="nombre" class="form-label">Nombre</label>
+                    <input type="text" name="nombre" id="nombre" class="form-control">
+                </div>
+                <div>
+                    <label for="appPaterno" class="form-label">Apellido Paterno</label>
+                    <input type="text" name="appPaterno" id="appPaterno" class="form-control">
+                </div>
+                <div>
+                    <label for="fecha" class="form-label">Fecha de Nacimiento</label>
+                    <input type="date" name="fecha" id="fecha" class="form-control">
+                </div>
+                <div>
+                    <label for="telefono" class="form-label">Telefono</label>
+                    <input type="text" name="telefono" id="telefono" class="form-control">
+                </div>
+                <div>
+                    <label for="correo" class="form-label">Correo</label>
+                    <input type="email" name="correo" id="correo" class="form-control">
+                </div><br><br>
+                <input type="submit" name="opcion" value="Agregar" class="btn btn-success">
+                <a href="{% url 'crud' %}"><button type="button" class="btn btn-secondary">Volver</button></a>
+            </form><br><br>
             </center>
         <div/>
       <div/>
