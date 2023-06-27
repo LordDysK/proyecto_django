@@ -55,9 +55,7 @@ def userAdd(request):
         rut = request.POST["rut"]
         nombre = request.POST["nombre"]
         appPaterno = request.POST["appPaterno"]
-        appMaterno = request.POST["appMaterno"]
         fecha = request.POST["fecha"]
-        tipo = request.POST["tipoUsuario"]
         correo = request.POST["correo"]
         telefono = request.POST["telefono"]
 
@@ -66,9 +64,7 @@ def userAdd(request):
             rut=rut,
             nombre=nombre,
             appPaterno=appPaterno,
-            appMaterno=appMaterno,
             fechaNacimiento=fecha,
-            tipoUsuario=objTipo,
             correo=correo,
             telefono=telefono,
             activo=1,
