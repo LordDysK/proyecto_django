@@ -2,16 +2,6 @@ from django.db import models
 
 # Create your models here.
 
-
-class tipoUsuario(models.Model):
-    idTipoUsuario = models.AutoField(
-        primary_key=True, db_column='idTipo', verbose_name='ID_tipo_Usuario')
-    tipoUsuario = models.CharField(max_length=20, blank=False, null=False)
-
-    def __str__(self):
-        return str(self.tipoUsuario)
-
-
 class Usuario(models.Model):
     # rut - Nombre - AppPaterno - appMaterno - fecha Nacimiento
     # tipo - correo - telefono - activo
