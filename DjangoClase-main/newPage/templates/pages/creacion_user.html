@@ -70,16 +70,16 @@
                 <img src="{% static 'img/img/Venom.jpg' %}"
                  class='img-thumbnail w-25 h-25 rounded-circle mb-3'><br>
                 <div>
-                    <label for="Nombre Usuario" class="form-label col-md-6">Nombre Usuario</label>
-                    <input type="text" name="Nom" id="Nom" class="form-control">
+                    <label for="username" class="form-label col-md-6">Nombre Usuario</label>
+                    <input type="text" name="username" id="username" class="form-control">
                 </div>
                 <div>
                     <label for="nombre" class="form-label col-md-6">Nombre</label>
                     <input type="text" name="nombre" id="nombre" class="form-control">
                 </div>
                 <div>
-                    <label for="appPaterno" class="form-label col-md-6">Apellido</label>
-                    <input type="text" name="appPaterno" id="appPaterno" class="form-control">
+                    <label for="apellido" class="form-label col-md-6">Apellido</label>
+                    <input type="text" name="apellido" id="apellido" class="form-control">
                 </div>
                 <div>
                     <label for="fecha" class="form-label col-md-6">Fecha de Nacimiento</label>
@@ -97,6 +97,9 @@
                 <a href=""><button type="button" class="btn btn-secondary">Volver</button></a>
             </form><br><br>
             </center>
+            {% if mensaje%}
+            {{mensaje}}
+            {% endif%}
         <div/>
       <div/>
     </div>

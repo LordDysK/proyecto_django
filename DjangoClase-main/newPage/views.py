@@ -1,6 +1,6 @@
 from django.shortcuts import render
-from .models import Usuario, tipoUsuario
-from .forms import UsuarioForm
+from .models import Usuario
+
 
 # Create your views here.
 
@@ -47,31 +47,29 @@ def hk(request):
     return render(request, "pages/hk.html", context)
 
 def userAdd(request):
-    if request.method != "POST":
-        tipo = tipoUsuario.objects.all()
-        context = {"tipo": tipo}
-        return render(request, "pages/creacion_user.html", context)
-    else:
-        Nom = request.POST["Nombre Usuario"]
+    if request.method == "POST":
+        Nom = request.POST["username"]
         nombre = request.POST["nombre"]
-        appPaterno = request.POST["appPaterno"]
+        apellido = request.POST["apellido"]
         fecha = request.POST["fecha"]
         correo = request.POST["correo"]
         telefono = request.POST["telefono"]
 
-        objTipo = tipoUsuario.objects.get(idTipoUsuario=tipo)
         objUsuario = Usuario.objects.create(
             Nom=Nom,
             nombre=nombre,
-            appPaterno=appPaterno,
+            apellido=apellido,
             fechaNacimiento=fecha,
             correo=correo,
             telefono=telefono,
             activo=1,
         )
         objUsuario.save()
-        context = {"mensaje": "OK Registrado Correctamente"}
+        context = {"mensaje": "Registrado Correctamente"}
         return render(request, "pages/creacion_user.html", context)
+    else:
+        context = {"mensaje": "No se a podido regristrar"}
+        return render(request, "pages/creacion_user.html")
     
 def nav(request):
     context = {}

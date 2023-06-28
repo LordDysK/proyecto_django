@@ -15,11 +15,11 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Usuario',
             fields=[
-                ('rut', models.CharField(max_length=10, primary_key=True, serialize=False)),
+                ('correo', models.EmailField(max_length=100,primary_key=True, unique=True)),
                 ('nombre', models.CharField(max_length=50)),
-                ('appPaterno', models.CharField(max_length=30)),
+                ('apellido', models.CharField(max_length=30)),
+                ('Nom',models.CharField( max_length=50)),
                 ('fechaNacimiento', models.DateField()),
-                ('correo', models.EmailField(max_length=100, unique=True)),
                 ('telefono', models.CharField(max_length=10)),
                 ('activo', models.IntegerField()),
             ],
