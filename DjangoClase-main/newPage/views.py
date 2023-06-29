@@ -54,6 +54,7 @@ def userAdd(request):
         fecha = request.POST["fecha"]
         correo = request.POST["correo"]
         telefono = request.POST["telefono"]
+        password = request.POST["password"]
 
         objUsuario = Usuario.objects.create(
             Nom=Nom,
