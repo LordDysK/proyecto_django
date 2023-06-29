@@ -11,9 +11,8 @@ urlpatterns = [
     path("Fh5",views.fh5,name="fh5"),
     path("seguridad",views.seguridad,name="seguridad"),
     path("catalogo",views.catalogo,name="catalogo"),
-    path("creacion_user",views.userAdd,name="creacion_user"),
     path("navbar",views.nav,name="navbar"),
     path("tokens",views.tokens,name="tokens"),
     path("inicio_sesion",views.inicio_sesion,name="inicio_sesion"),
-    path("creacion_user",views.creacion_user,name="creacion_user"),
+    path("creacion_user",views.userAdd,name="creacion_user"),
 ]

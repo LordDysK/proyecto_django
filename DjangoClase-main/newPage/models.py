@@ -1,5 +1,5 @@
 from django.db import models
-from django.contrib.auth.models import AbstractUser
+from django.contrib.auth.models import AbstractUser, BaseUserManager, PermissionsMixin
 
 # Create your models here.
 
@@ -18,7 +18,8 @@ class Usuario(models.Model):
 
     def __str__(self):
         return str(self.nombre)+" "+str(self.apellido) """
-from django.contrib.auth.models import AbstractBaseUser, BaseUserManager
+from django.contrib.auth.models import AbstractBaseUser, BaseUserManager, PermissionsMixin
+from django.contrib.auth.models import Group, Permission
 
 class UsuarioManager(BaseUserManager):
     def create_user(self, correo, password=None, **extra_fields):
@@ -44,7 +45,7 @@ class UsuarioManager(BaseUserManager):
 
         return self.create_user(correo, password, **extra_fields)
 
-class Usuario(AbstractBaseUser):
+class Usuario(AbstractBaseUser, PermissionsMixin):
     Nom = models.CharField(max_length=30)
     nombre = models.CharField(max_length=50, blank=False, null=False)
     apellido = models.CharField(max_length=30, blank=False, null=False)
@@ -56,9 +57,14 @@ class Usuario(AbstractBaseUser):
     # Campos requeridos para el modelo de usuario personalizado
     is_active = models.BooleanField(default=True)
     is_staff = models.BooleanField(default=False)
+    
+    # Relación con los grupos
+    groups = models.ManyToManyField(Group, related_name='usuarios')
+
+    # Relación con los permisos de usuario
+    user_permissions = models.ManyToManyField(Permission, related_name='usuarios')
 
     USERNAME_FIELD = 'correo'
-    REQUIRED_FIELDS = ['nombre', 'apellido', 'fechaNacimiento', 'telefono']
 
     objects = UsuarioManager()
 
