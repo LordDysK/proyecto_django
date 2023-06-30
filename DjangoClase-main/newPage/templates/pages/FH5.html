@@ -105,21 +105,16 @@
       </div>
     </div>
 
-    <div class="DescripcionRe4">
+    <div class="DescripcionRe4 col-2 col-md-9 text-center">
       <h2>Forza Horizon 5</h2>
       <p>
         Explora los vibrantes paisajes del mundo abierto de México y disfruta de una diversión sin límites al volante de
         los mejores coches del mundo.
       </p>
-      <button
-        class="btn btn-primary mt-3"
-        data-bs-toggle="collapse"
-        data-bs-target="#more-info"
-        aria-expanded="false"
-        aria-controls="more-info">
+      <button class="btn btn-primary mt-3 mx-auto" id="ver-mas" onclick="verMas()">
         Ver más
       </button>
-      <div class="collapse" id="more-info">
+      <div class="collapse" id="expand-description">
         <h3>Características del juego Forza Horizon 5</h3>
         <ul>
           <li>
@@ -144,7 +139,23 @@
           abierto de México con una acción de conducción ilimitada y divertida en cientos de los mejores coches del
           mundo.
         </p>
+        <button class="btn btn-primary mt-3 mx-auto" id="ver-menos" onclick="verMenos()">Ver menos</button>
       </div>
     </div>
+
+    <script src="{% static 'bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+    <script>
+      function verMas() {
+        document.getElementById("ver-mas").style.display = "none";
+        document.getElementById("expand-description").classList.add("show");
+        document.getElementById("ver-menos").style.display = "block";
+      }
+    
+      function verMenos() {
+        document.getElementById("ver-menos").style.display = "none";
+        document.getElementById("ver-mas").style.display = "block";
+        document.getElementById("expand-description").classList.remove("show");
+      }
+    </script>
   </body>
 </html>
