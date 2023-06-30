@@ -64,9 +64,13 @@
         <div class='col-lg-6 text-center mx-auto fw-bolder p-5'>
           <h2>Inicio Sesion<h2/>    
             <center>
-            <form action="" method='POST'>
+                {% if request.user.is_authenticated %}
+                <h1>ya estas logueado</h1>
+                {% else %}
+                <form action="" method='POST'>
                 <br>
                 {% csrf_token %}
+                
                 <img src="{% static 'img/img/Spiderman.jpg' %}"
                  class='img-thumbnail w-25 h-25 rounded-circle mb-3'><br>
                 <label for="username" class='form-label'>Nombre Usuario</label>
@@ -79,7 +83,8 @@
                 <br>
                 <input type="submit" value='Conectar' class='btn btn-success'> 
                 <br>
-            </form>
+                </form>
+                {% endif %}
             </center>
         <div/>
       <div/>

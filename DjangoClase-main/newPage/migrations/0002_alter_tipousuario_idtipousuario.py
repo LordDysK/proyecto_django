@@ -9,3 +9,5 @@ class Migration(migrations.Migration):
         ('newPage', '0001_initial'),
     ]
 
+    
+
