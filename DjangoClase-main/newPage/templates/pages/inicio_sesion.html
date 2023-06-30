@@ -65,7 +65,7 @@
           <h2>Inicio Sesion<h2/>    
             <center>
               {% if request.user.is_authenticated %}
-              <p>Bienvenido, {{ user.username }}. Ya estás conectado.</p>
+              <p>Bienvenido, {{ request.user.username }}. Ya estás conectado.</p>
               <a href="{% url 'logout' %}">Cerrar sesión</a>
               {% else %}
               <form method="post" action="{% url 'loginview' %}">
@@ -87,6 +87,7 @@
               </div>
               {% endif %}
           </center>
+          
           
         <div/>
       <div/>

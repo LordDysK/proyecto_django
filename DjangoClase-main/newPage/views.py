@@ -107,9 +107,9 @@ def loginview(request):
             correo = form.cleaned_data['correo']
             password = form.cleaned_data['password']
 
-            user = authenticate(correo=correo, password=password)
-            if user:
-                login(request, user)
+            usuarios = authenticate(correo=correo, password=password)
+            if usuarios:
+                login(request, usuarios)
                 context={"mensaje": "registro"}
                 return render(request,'pages/home.html',context)  # Corregido el nombre de la ruta
             else:
