@@ -106,21 +106,16 @@
       </div>
     </div>
 
-    <div class="DescripcionRe4">
+    <div class="DescripcionRe4 col-2 col-md-9 text-center">
       <h2>Katana Zero</h2>
       <p>
         Usa tu espada, corre y manipula el tiempo para desvelar tu pasado en un despliegue acrobático brutalmente
         estético.
       </p>
-      <button
-        class="btn btn-primary mt-3"
-        data-bs-toggle="collapse"
-        data-bs-target="#more-info"
-        aria-expanded="false"
-        aria-controls="more-info">
+      <button class="btn btn-primary mt-3 mx-auto" id="ver-mas" onclick="verMas()">
         Ver más
       </button>
-      <div class="collapse" id="more-info">
+      <div class="collapse" id="expand-description">
         <h3>Características del juego Katana Zero</h3>
         <ul>
           <li>
@@ -145,9 +140,24 @@
           situación se van desvelando poco a poco, y nos ha sorprendido la carga narrativa que encontramos en este
           título.
         </p>
+        <button class="btn btn-primary mt-3 mx-auto" id="ver-menos" onclick="verMenos()">Ver menos</button>
+
       </div>
     </div>
 
-
+    <script src="{% static 'bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+    <script>
+      function verMas() {
+        document.getElementById("ver-mas").style.display = "none";
+        document.getElementById("expand-description").classList.add("show");
+        document.getElementById("ver-menos").style.display = "block";
+      }
+    
+      function verMenos() {
+        document.getElementById("ver-menos").style.display = "none";
+        document.getElementById("ver-mas").style.display = "block";
+        document.getElementById("expand-description").classList.remove("show");
+      }
+    </script>
   </body>
 </html>

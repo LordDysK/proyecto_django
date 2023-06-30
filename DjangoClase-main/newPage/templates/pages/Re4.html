@@ -103,7 +103,7 @@
       </div>
     </div>
 
-    <div class="DescripcionRe4">
+    <div class="DescripcionRe4 col-2 col-md-9 text-center">
       <h2>Resident Evil 4</h2>
       <p>
         Disfruta del remake del juego de survival horror que cambió por completo el género. Resident Evil 4, adaptado a
@@ -112,15 +112,10 @@
         ofrece otro remake de un juego clásico. Si nunca has jugado al RE4 original, el Resident Evil 4 Código de Steam
         es una forma perfecta de experimentar uno de los mejores juegos, si no el mejor, de la serie Resident Evil.
       </p>
-      <button
-        class="btn btn-primary mt-3"
-        data-bs-toggle="collapse"
-        data-bs-target="#more-info"
-        aria-expanded="false"
-        aria-controls="more-info">
+      <button class="btn btn-primary mt-3 mx-auto" id="ver-mas" onclick="verMas()">
         Ver más
       </button>
-      <div class="collapse" id="more-info">
+      <div class="collapse" id="expand-description">
         <h3>Características del juego Resident Evil 4</h3>
         <ul>
           <li>
@@ -146,7 +141,22 @@
           apoderado de la población local y la ha infectado. Compra Resident Evil 4 Código de Steam, y enfréntate a los
           terroríficos enemigos en tu misión de encontrar a quien secuestró a la hija del Presidente.
         </p>
+        <button class="btn btn-primary mt-3 mx-auto" id="ver-menos" onclick="verMenos()">Ver menos</button>
       </div>
     </div>
+    <script src="{% static 'bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+    <script>
+      function verMas() {
+        document.getElementById("ver-mas").style.display = "none";
+        document.getElementById("expand-description").classList.add("show");
+        document.getElementById("ver-menos").style.display = "block";
+      }
+    
+      function verMenos() {
+        document.getElementById("ver-menos").style.display = "none";
+        document.getElementById("ver-mas").style.display = "block";
+        document.getElementById("expand-description").classList.remove("show");
+      }
+    </script>
   </body>
 </html>

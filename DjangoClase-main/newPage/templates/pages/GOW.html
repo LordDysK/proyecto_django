@@ -104,22 +104,17 @@
       </div>
     </div>
 
-    <div class="DescripcionRe4">
+    <div class="DescripcionRe4 col-2 col-md-9 text-center">
       <h2>God of War</h2>
       <p>
         Kratos ha dejado atrás su venganza contra los dioses del Olimpo y vive ahora como un hombre en los dominios de
         los dioses y monstruos nórdicos
       </p>
       <p>En este mundo cruel e implacable debe luchar para sobrevivir… y enseñar a su hijo a hacerlo también.</p>
-      <button
-        class="btn btn-primary mt-3"
-        data-bs-toggle="collapse"
-        data-bs-target="#more-info"
-        aria-expanded="false"
-        aria-controls="more-info">
+      <button class="btn btn-primary mt-3 mx-auto" id="ver-mas" onclick="verMas()">
         Ver más
       </button>
-      <div class="collapse" id="more-info">
+      <div class="collapse" id="expand-description">
         <h3>Características del juego God of War</h3>
         <ul>
           <li>
@@ -145,7 +140,23 @@
           En esta nueva entrega Kratos es acompañado por su hijo Atreus, a quien deberá enseñar a sobrevivir en los 9
           mundos de la cosmología nórdica antigua y será su acompañante y enfoque principal durante toda la aventura.
         </p>
+        <button class="btn btn-primary mt-3 mx-auto" id="ver-menos" onclick="verMenos()">Ver menos</button>
+
       </div>
     </div>
+    <script src="{% static 'bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+    <script>
+      function verMas() {
+        document.getElementById("ver-mas").style.display = "none";
+        document.getElementById("expand-description").classList.add("show");
+        document.getElementById("ver-menos").style.display = "block";
+      }
+    
+      function verMenos() {
+        document.getElementById("ver-menos").style.display = "none";
+        document.getElementById("ver-mas").style.display = "block";
+        document.getElementById("expand-description").classList.remove("show");
+      }
+    </script>
   </body>
 </html>

@@ -111,22 +111,17 @@
     </div>
 
     <!-- cambiar la descricion del juego xdxdxdx -->
-    <div class="DescripcionRe4">
+    <div class="DescripcionRe4 col-2 col-md-9 text-center">
       <h2>Hollow Knight</h2>
       <p>
         Hollow Knight es una aventura de acción clásica en 2D ambientada en un vasto mundo interconectado. Explora
         cavernas tortuosas, ciudades antiguas y páramos mortales. Combate contra criaturas corrompidas, haz nuevas
         amistades con extraños insectos y resuelve los antiguos misterios que yacen en el corazón del reino..
       </p>
-      <button
-        class="btn btn-primary mt-3"
-        data-bs-toggle="collapse"
-        data-bs-target="#more-info"
-        aria-expanded="false"
-        aria-controls="more-info">
+      <button class="btn btn-primary mt-3 mx-auto" id="ver-mas" onclick="verMas()">
         Ver más
       </button>
-      <div class="collapse" id="more-info">
+      <div class="collapse" id="expand-description">
         <h3>Características del juego Resident Evil 4</h3>
         <ul>
           <li>
@@ -162,7 +157,22 @@
           habituales. Si te gusta la jugabilidad clásica, los personajes adorables a la vez que extraños, las aventuras
           épicas y los mundos bellos y de estilo gótico, ¡entonces Hollow Knight te espera!
         </p>
+        <button class="btn btn-primary mt-3 mx-auto" id="ver-menos" onclick="verMenos()">Ver menos</button>
       </div>
     </div>
+    <script src="{% static 'bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+    <script>
+      function verMas() {
+        document.getElementById("ver-mas").style.display = "none";
+        document.getElementById("expand-description").classList.add("show");
+        document.getElementById("ver-menos").style.display = "block";
+      }
+    
+      function verMenos() {
+        document.getElementById("ver-menos").style.display = "none";
+        document.getElementById("ver-mas").style.display = "block";
+        document.getElementById("expand-description").classList.remove("show");
+      }
+    </script>
   </body>
 </html>
