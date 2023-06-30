@@ -1,10 +1,8 @@
 from django.db import models
-from django.contrib.auth.models import AbstractUser, BaseUserManager, PermissionsMixin
-
-# Create your models here.
-
 from django.contrib.auth.models import AbstractBaseUser, BaseUserManager, PermissionsMixin
 from django.contrib.auth.models import Group, Permission
+
+
 
 class UsuarioManager(BaseUserManager):
     def create_user(self, correo, password=None, **extra_fields):

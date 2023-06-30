@@ -1,5 +1,6 @@
 from django.urls import path
 from . import views
+from .views import logout_view
 
 urlpatterns = [
     path("re4",views.re4,name="re4"),
@@ -15,4 +16,6 @@ urlpatterns = [
     path("tokens",views.tokens,name="tokens"),
     path("inicio_sesion",views.inicio_sesion,name="inicio_sesion"),
     path("creacion_user",views.userAdd,name="creacion_user"),
+    path("loginview",views.loginview,name="loginview"),
+    path('logout/', logout_view, name='logout'),
 ]

@@ -64,28 +64,30 @@
         <div class='col-lg-6 text-center mx-auto fw-bolder p-5'>
           <h2>Inicio Sesion<h2/>    
             <center>
-                {% if request.user.is_authenticated %}
-                <h1>ya estas logueado</h1>
-                {% else %}
-                <form action="" method='POST'>
-                <br>
-                {% csrf_token %}
-                
-                <img src="{% static 'img/img/Spiderman.jpg' %}"
-                 class='img-thumbnail w-25 h-25 rounded-circle mb-3'><br>
-                <label for="username" class='form-label'>Nombre Usuario</label>
-                <input type="text" class='form-control' name='username' id='username'
-                    placeholder='Ingrese su usuario'><br>
-                <label for="password" class='form-label'>Contraseña</label>
-                <input type="password" class='form-control' name='password' id='password'
-                    placeholder='Ingrese su contraseña'><br>
-                <a href="{%url 'creacion_user'%}" target="_blank"> <h3>No tienes cuenta? Registrate </h3> </a> 
-                <br>
-                <input type="submit" value='Conectar' class='btn btn-success'> 
-                <br>
-                </form>
-                {% endif %}
-            </center>
+              {% if request.user.is_authenticated %}
+              <p>Bienvenido, {{ user.username }}. Ya estás conectado.</p>
+              <a href="{% url 'logout' %}">Cerrar sesión</a>
+              {% else %}
+              <form method="post" action="{% url 'loginview' %}">
+                  {% csrf_token %}
+                  <img src="{% static 'img/img/Spiderman.jpg' %}" class="img-thumbnail w-25 h-25 rounded-circle mb-3"><br>
+                  <label for="correo" class="form-label">Correo Electrónico</label>
+                  <input type="email" class="form-control" name="correo" id="correo" placeholder="Ingrese su correo electrónico"><br>
+                  <label for="password" class="form-label">Contraseña</label>
+                  <input type="password" class="form-control" name="password" id="password" placeholder="Ingrese su contraseña"><br>
+                  <a href="{% url 'creacion_user' %}" target="_blank"><h3>No tienes cuenta? Regístrate</h3></a>
+                  <br>
+                  <input type="submit" value="Conectar" class="btn btn-success">
+                  <br>
+              </form>
+              {% endif %} 
+              {% if mensaje %}
+              <div class="alert alert-success" role="alert">
+                  {{ mensaje }}
+              </div>
+              {% endif %}
+          </center>
+          
         <div/>
       <div/>
     </div>

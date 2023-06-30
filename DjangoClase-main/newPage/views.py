@@ -1,8 +1,11 @@
 from django.shortcuts import render
 from .models import Usuario
 from .forms import UsuarioForm
-
-
+from django.shortcuts import render, redirect
+from django.contrib.auth import authenticate, login
+from .forms import LoginForm
+from django.contrib.auth import logout
+from django.shortcuts import redirect
 
 # Create your views here.
 
@@ -95,6 +98,36 @@ def tokens(request):
 def inicio_sesion(request):
     context = {}
     return render(request, "pages/inicio_sesion.html", context)
+
+
+def loginview(request):
+    if request.method == 'POST':
+        form = LoginForm(request.POST)
+        if form.is_valid():
+            correo = form.cleaned_data['correo']
+            password = form.cleaned_data['password']
+
+            user = authenticate(correo=correo, password=password)
+            if user:
+                login(request, user)
+                context={"mensaje": "registro"}
+                return render(request,'pages/home.html',context)  # Corregido el nombre de la ruta
+            else:
+                context = {'login_error': 'Credenciales incorrectas, si no tienes cuenta regístrate.'}
+                return render(request, 'pages/inicio_sesion.html', context)  # Corregido la ruta de la plantilla
+    else:
+        form = LoginForm()
+
+    context = {'form': form}
+    return render(request, 'pages/inicio_sesion.html', context)
+
+
+
+
+def logout_view(request):
+    logout(request)
+    return redirect('loginview')
+
 
 """ def creacion_user(request):
     context = {}
